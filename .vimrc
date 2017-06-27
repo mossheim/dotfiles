@@ -93,7 +93,7 @@ map <leader>n :lnext<CR>
 map <leader>p :lprev<CR>
 
 " autocompile this file
-map <leader>cc : !g++ -Wall -Wpedantic -std=c++1z % -o %< && %< <CR>
+map <leader>cc : !g++ -Wall -Wpedantic -std=c++1z % -o %< && ./%< <CR>
 
 " Apply YCM FixIt
 map <F8> :YcmCompleter FixIt<CR>
