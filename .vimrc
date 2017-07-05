@@ -116,4 +116,4 @@ augroup myvimrchooks
 augroup END
 
 " strip trailing whitespace on save
-autocmd FileType c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType yml,c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
