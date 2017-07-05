@@ -12,6 +12,8 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+set autoread " automatically reload files that have changed externally
+
 " To avoid redraws while executing marcos etc. The reason I enabled this is to stop commands
 " from disappearing in ex mode
 set lazyredraw
