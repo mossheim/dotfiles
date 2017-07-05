@@ -1,3 +1,8 @@
+" main .vimrc
+" Brian Heim, Author
+" 2017
+
+" Basic config settings
 colorscheme wombat256mod
 set exrc " Force to source .vimrc if present in cwd
 set secure " Adds security for non-main .vimrc
