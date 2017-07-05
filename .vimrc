@@ -7,6 +7,10 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+" To avoid redraws while executing marcos etc. The reason I enabled this is to stop commands
+" from disappearing in ex mode
+set lazyredraw
+
 " C++ indentation rules
 set cino+=L0:0g0N-st0
 let g:brian_cpp_flags = '-Wall -Wpedantic -std=c++1z'
