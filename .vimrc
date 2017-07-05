@@ -98,6 +98,9 @@ map <leader>p :lprev<CR>
 
 " autocompile this file
 map <leader>cc : !g++ -Wall -Wpedantic -std=c++1z % -o %< && ./%< <CR>
+map <leader>cmc : !cmake ./build <CR>
+map <leader>cmb : !cmake --build ./build <CR>
+map <leader>cmi : !cmake --build ./build --target install <CR>
 
 " Apply YCM FixIt
 map <F8> :YcmCompleter FixIt<CR>
