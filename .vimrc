@@ -12,6 +12,11 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+autocmd BufRead,BufNewFile *.sc set tabstop=4
+autocmd BufRead,BufNewFile *.sc set softtabstop=4
+autocmd BufRead,BufNewFile *.sc set shiftwidth=4
+autocmd BufRead,BufNewFile *.sc set noexpandtab
+
 set autoread " automatically reload files that have changed externally
 
 " To avoid redraws while executing marcos etc. The reason I enabled this is to stop commands
