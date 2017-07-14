@@ -109,8 +109,8 @@ map <leader>n :lnext<CR>
 map <leader>p :lprev<CR>
 
 " insert date as YYYY-MM-DD
-nnoremap <leader>td "=strftime("%Y-%m-%d")<CR>P
-nnoremap <F5>td "=strftime("%Y-%m-%d")<CR>P
+nnoremap <leader>td "=strftime("%Y-%m-%d")<CR>p
+nnoremap <F5>td "=strftime("%Y-%m-%d")<CR>p
 inoremap <F5> <C-R>=strftime("%Y-%m-%d")<CR>
 
 " autocompile this file
