@@ -29,9 +29,13 @@ map <Space>l <C-w>l
 " tab support
 map <Space>cs :xcmenucmd Show Code Snippet Library<CR>
 
-" build
-map <Space>rb :xcmenucmd Build<CR>
-map <Space>ru :xcmenucmd Test<CR>
+" remove trailing whitespace
+map <Space>rtw :%s/ +$//g<CR>
+
+" build/produce menu
+map <Space>pb :xcmenucmd Build<CR>
+map <Space>pt :xcmenucmd Test<CR>
+map <Space>pa :xcmenucmd Analyze<CR>
 
 " reindent
 map <Space>i ggvG :xcmenucmd Re-Indent<CR><Esc>
