@@ -108,6 +108,10 @@ map <leader>l <C-w>l
 map <leader>n :lnext<CR>
 map <leader>p :lprev<CR>
 
+" insert date as YYYY-MM-DD
+nnoremap <leader>td "=strftime("%Y-%m-%d")<CR>P
+inoremap <leader>td <C-R>=strftime("%Y-%m-%d")<CR>
+
 " autocompile this file
 map <leader>cc : !g++ -Wall -Wpedantic -std=c++1z % -o %< && ./%< <CR>
 map <leader>cmc : !cmake ./build <CR>
