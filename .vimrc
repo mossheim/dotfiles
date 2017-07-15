@@ -19,10 +19,6 @@ autocmd BufRead,BufNewFile *.sc set noexpandtab
 
 set autoread " automatically reload files that have changed externally
 
-" To avoid redraws while executing marcos etc. The reason I enabled this is to stop commands
-" from disappearing in ex mode
-set lazyredraw
-
 " C++ indentation rules
 set cino+=L0:0g0N-st0
 let g:brian_cpp_flags = '-Wall -Wpedantic -std=c++1z'
