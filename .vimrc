@@ -12,12 +12,14 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+" Use (real) tabs of 4 on SuperCollider files
 autocmd BufRead,BufNewFile *.sc set tabstop=4
 autocmd BufRead,BufNewFile *.sc set softtabstop=4
 autocmd BufRead,BufNewFile *.sc set shiftwidth=4
 autocmd BufRead,BufNewFile *.sc set noexpandtab
 
-set autoread " automatically reload files that have changed externally
+" automatically reload files that have changed externally
+set autoread
 
 " C++ indentation rules
 set cino+=L0:0g0N-st0
