@@ -111,8 +111,8 @@ map <leader>bh i<CR><ESC>
 
 " insert date as YYYY-MM-DD
 nnoremap <leader>td "=strftime("%Y-%m-%d")<CR>p
-nnoremap <F5>td "=strftime("%Y-%m-%d")<CR>p
-inoremap <F5> <C-R>=strftime("%Y-%m-%d")<CR>
+nnoremap <F4> "=strftime("%Y-%m-%d")<CR>p
+inoremap <F4> <C-R>=strftime("%Y-%m-%d")<CR>
 
 " autocompile this file
 map <leader>cc : !g++ -Wall -Wpedantic -std=c++1z % -o %< && ./%< <CR>
