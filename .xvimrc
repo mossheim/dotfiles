@@ -36,6 +36,7 @@ map <Space>rtw :%s/ +$//g<CR>
 map <Space>pb :xcmenucmd Build<CR>
 map <Space>pt :xcmenucmd Test<CR>
 map <Space>pa :xcmenucmd Analyze<CR>
+map <Space>pr :xcmenucmd Run<CR>
 
 " reindent
 map <Space>i ggvG :xcmenucmd Re-Indent<CR><Esc>
