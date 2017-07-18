@@ -3,7 +3,7 @@
 " 2017
 
 " Basic config settings
-colorscheme wombat256mod
+" colorscheme wombat256mod
 set exrc " Force to source .vimrc if present in cwd
 set secure " Adds security for non-main .vimrc
 set colorcolumn=100 " Highlight 90th column
