@@ -1,0 +1,21 @@
+*~
+.DS_Store
+sp_test
+CrawlEar/test_audio
+SamplePainter/test_audio
+analysis_data
+a.out
+composer.lock
+composer.json
+vendor
+config
+usernotes
+userscripts
+
+# vim
+*.swo
+*.swp
+
+# CLion
+.idea
+cmake-build-debug
