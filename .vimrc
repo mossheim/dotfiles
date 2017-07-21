@@ -123,6 +123,15 @@ map <leader>cmi : !cmake --build ./build --target install <CR>
 " Apply YCM FixIt
 map <F8> :YcmCompleter FixIt<CR>
 
+" vim-dispatch
+map <F9> :Dispatch
+
+" fugitive
+map <leader>gp :Gpush<CR>
+map <leader>gc :Git co -m ""<left>
+map <leader>ga :Git ap<CR>
+map <leader>gh :Git ch -b 
+
 " For NERDTree
 map <C-n> :NERDTree<CR>
 " autocmd vimenter * NERDTree
