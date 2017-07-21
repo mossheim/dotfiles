@@ -129,7 +129,8 @@ map <F9> :Dispatch<CR>
 " fugitive
 map <leader>gp :Gpush<CR>
 map <leader>gc :Git co -m ""<left>
-map <leader>ga :Git ap<CR>
+" write first to avoid common mistake
+map <leader>ga :w<CR>:Git ap<CR>
 map <leader>gh :Git ch -b 
 
 " For NERDTree
