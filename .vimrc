@@ -133,6 +133,13 @@ map <leader>gc :Git co -m ""<left>
 map <leader>ga :w<CR>:Git ap<CR>
 map <leader>gh :Git ch -b 
 
+" config for vim-airline
+let g:airline_section_x = ''
+let g:airline_section_y = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_skip_empty_sections = 1
+
 " For NERDTree
 map <C-n> :NERDTree<CR>
 
