@@ -124,7 +124,7 @@ map <leader>cmi : !cmake --build ./build --target install <CR>
 map <F8> :YcmCompleter FixIt<CR>
 
 " vim-dispatch
-map <F9> :Dispatch
+map <F9> :Dispatch<CR>
 
 " fugitive
 map <leader>gp :Gpush<CR>
