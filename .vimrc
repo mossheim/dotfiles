@@ -135,7 +135,6 @@ map <leader>gh :Git ch -b
 
 " For NERDTree
 map <C-n> :NERDTree<CR>
-" autocmd vimenter * NERDTree
 
 " auto-reload vimrc on write
 augroup myvimrchooks
