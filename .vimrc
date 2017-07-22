@@ -124,10 +124,11 @@ map <F9> :Dispatch<CR>
 
 " fugitive
 map <leader>gp :Gpush<CR>
-map <leader>gc :Git co -m ""<left>
+map <leader>gc :Gcommit -m ""<left>
 " write first to avoid common mistake
 map <leader>ga :w<CR>:Git ap<CR>
-map <leader>gh :Git ch -b 
+map <leader>gb :Git ch -b<space>
+map <leader>gk :Git ch<space>
 
 " config for vim-airline
 let g:airline_section_x = ''
