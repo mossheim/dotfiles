@@ -151,3 +151,10 @@ augroup END
 
 " strip trailing whitespace on save
 autocmd FileType yml,c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
+
+""""""""""""""""""""""""""""""""""""""""
+" selected templates & mappings from c-support by wolfgang mehner
+"
+" block completion (good cross-language)
+inoremap  {<CR>    {<CR>}<Esc>O
+vnoremap  {<CR>   S{<CR>}<Esc>Pk=iB
