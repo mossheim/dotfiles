@@ -129,6 +129,9 @@ map <leader>gc :Gcommit -m ""<left>
 map <leader>ga :w<CR>:Git ap<CR>
 map <leader>gb :Git ch -b<space>
 map <leader>gk :Git ch<space>
+map <leader>gl :Git lg<CR>
+map <leader>gs :Gstatus<CR>
+map <leader>gr :Git reset<CR>
 
 " config for vim-airline
 let g:airline_section_x = ''
