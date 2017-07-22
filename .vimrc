@@ -61,7 +61,6 @@ let g:load_doxygen_syntax=1
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
-" 
 " let g:syntastic_always_populate_loc_list = 1 " always populate the list of errors
 " let g:syntastic_auto_loc_list = 1 " autopop the list
 " let g:syntastic_check_on_open = 1 " check when opening
@@ -69,12 +68,9 @@ let g:load_doxygen_syntax=1
 " let g:syntastic_cpp_include_dirs = ['include']
 " let g:syntastic_cpp_checkers = ["clang-tidy", "clang-check", "gcc"]
 " let g:syntastic_cpp_check_header = 1 " check hpp files too
-" 
 " let g:syntastic_cpp_compiler = 'g++'
-" 
 " let g:syntastic_error_symbol = "✗"
 " let g:syntastic_warning_symbol = "⚡"
-" 
 " let g:syntastic_cpp_compiler_options = g:brian_cpp_flags
 
 """"""""""""""""""""
