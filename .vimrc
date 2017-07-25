@@ -11,6 +11,12 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+set foldmethod=syntax
+set foldlevelstart=4 " start folding at 4 levels
+
+" colors
+hi Folded ctermfg=LightGrey
+hi CComment ctermfg=Grey
 
 " Use (real) tabs of 4 on SuperCollider files
 autocmd BufRead,BufNewFile *.sc set tabstop=4
@@ -112,7 +118,7 @@ inoremap <F4> <C-R>=strftime("%Y-%m-%d")<CR>
 
 " autocompile this file
 map <leader>cc : !g++ -Wall -Wpedantic -std=c++1z % -o %< && ./%< <CR>
-map <leader>cmc : !cmake ./build <CR>
+map <leader>cmc : !cd build && cmake .. && cd ..<CR>
 map <leader>cmb : !cmake --build ./build <CR>
 map <leader>cmi : !cmake --build ./build --target install <CR>
 
