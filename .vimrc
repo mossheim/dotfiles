@@ -160,8 +160,13 @@ augroup myvimrchooks
   autocmd bufwritepost .vimrc source ~/.vimrc
 augroup END
 
+""""""""""""""""""""""""""""""""""""""""
+" filetype things
+"
 " strip trailing whitespace on save
 autocmd FileType yml,c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
+" set dispatch command for latex files
+autocmd FileType tex let b:dispatch = 'pdflatex %'
 
 """"""""""""""""""""""""""""""""""""""""
 " selected templates & mappings from c-support by wolfgang mehner
