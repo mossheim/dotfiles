@@ -146,9 +146,6 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_skip_empty_sections = 1
 
-" For NERDTree
-map <C-n> :NERDTree<CR>
-
 " MACOS ONLY
 " copy/paste clipboard
 map <leader>y :w !pbcopy<CR><CR>
