@@ -117,7 +117,7 @@ map <leader>gu :Dispatch! git push<CR>
 map <leader>gp :Gpush<CR>
 map <leader>gc :Gcommit -m ""<left>
 " write first to avoid common mistake
-map <leader>ga :w<CR>:Git ap<CR>
+map <leader>ga :w<CR>:!git ap<CR>
 map <leader>gb :Git ch -b<space>
 map <leader>gk :Git ch<space>
 map <leader>gl :Git lg<CR>
