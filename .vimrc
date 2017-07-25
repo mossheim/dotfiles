@@ -131,11 +131,6 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_skip_empty_sections = 1
 
-" MACOS ONLY
-" copy/paste clipboard
-map <leader>y :w !pbcopy<CR><CR>
-map <leader>p :r !pbpaste<CR>
-
 " auto-reload vimrc on write
 augroup myvimrchooks
   au!
