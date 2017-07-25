@@ -129,7 +129,7 @@ map <F8> :YcmCompleter FixIt<CR>
 map <F9> :Dispatch<CR>
 
 " fugitive
-map <leader>gu :Dispatch! git pull<CR>
+map <leader>gu :Dispatch! git push<CR>
 map <leader>gp :Gpush<CR>
 map <leader>gc :Gcommit -m ""<left>
 " write first to avoid common mistake
