@@ -50,3 +50,7 @@ map <Space>bp :xcmenucmd Go Back<CR>
 
 " autofix
 map <F8> :xcmenucmd Fix All In Scope<CR>
+
+" show/hide issue
+map <Space>i :xcmenucmd Show Issue<CR>
+map <Space>I :xcmenucmd Show All Issues<CR>
