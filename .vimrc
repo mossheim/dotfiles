@@ -164,7 +164,7 @@ augroup END
 " filetype things
 "
 " strip trailing whitespace on save
-autocmd FileType yml,c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType vim,yaml,c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
 " set dispatch command for latex files
 autocmd FileType tex let b:dispatch = 'pdflatex %'
 
