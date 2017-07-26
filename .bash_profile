@@ -7,7 +7,7 @@ alias pdfmerge='"/System/Library/Automator/Combine PDF Pages.action/Contents/Res
 alias sclang='/Applications/SuperCollider.app/Contents/MacOS/sclang'
 
 PS1='[\u@\h \W]$ '
-PATH=$PATH:$HOME/bin
+PATH=$PATH:$HOME/bin:/usr/local/opt/go/libexec/bin
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
