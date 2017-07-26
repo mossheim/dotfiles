@@ -112,6 +112,8 @@ map <F8> :YcmCompleter FixIt<CR>
 " vim-dispatch
 map <F9> :Dispatch<CR>
 
+nmap <F3> @:
+
 " fugitive
 map <leader>gu :Dispatch! git push<CR>
 map <leader>gp :Gpush<CR>
