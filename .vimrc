@@ -6,7 +6,8 @@
 " colorscheme wombat256mod
 set exrc " Force to source .vimrc if present in cwd
 set secure " Adds security for non-main .vimrc
-set colorcolumn=100 " Highlight 90th column
+set colorcolumn=100 " Highlight 100th column
+set textwidth=100
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
