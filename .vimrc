@@ -101,6 +101,9 @@ nnoremap <leader>td "=strftime("%Y-%m-%d")<CR>p
 nnoremap <F4> "=strftime("%Y-%m-%d")<CR>p
 inoremap <F4> <C-R>=strftime("%Y-%m-%d")<CR>
 
+" insert date as YYYY-MM-DD HH:MM:SS zone-offset
+nnoremap <leader>tld "=strftime('%Y-%m-%d %H:%M:%S %z')<CR>p
+
 " autocompile this file
 map <leader>cc : !g++ -Wall -Wpedantic -std=c++1z % -o %< && ./%< <CR>
 map <leader>cmc : !cd build && cmake .. && cd ..<CR>
