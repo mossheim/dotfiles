@@ -54,11 +54,6 @@ let g:ycm_log_level = 'error' "default info
 
 let g:ycm_confirm_extra_conf = 0
 
-" For C++ highlighting
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_experimental_simple_template_highlight = 1
-
 " C++ compiler warnings
 let g:C_CFlags = g:brian_cpp_flags
 
