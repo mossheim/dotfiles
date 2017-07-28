@@ -50,7 +50,7 @@ let g:ycm_path_to_python_interpreter = '' "default ''
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 let g:ycm_server_use_vim_stdout = 0 "default 0 (logging to console)
-let g:ycm_server_log_level = 'debug' "default info
+let g:ycm_log_level = 'error' "default info
 
 let g:ycm_confirm_extra_conf = 0
 
