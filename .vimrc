@@ -8,9 +8,9 @@ set exrc " Force to source .vimrc if present in cwd
 set secure " Adds security for non-main .vimrc
 set colorcolumn=100 " Highlight 100th column
 set textwidth=100
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 set foldmethod=syntax
 set foldlevelstart=4 " start folding at 4 levels
