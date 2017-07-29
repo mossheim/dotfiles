@@ -15,10 +15,6 @@ set expandtab
 set foldmethod=syntax
 set foldlevelstart=4 " start folding at 4 levels
 
-" colors
-hi Folded ctermfg=LightGrey
-hi CComment ctermfg=Grey
-
 " Use (real) tabs of 4 on SuperCollider files
 autocmd BufRead,BufNewFile *.sc set tabstop=4
 autocmd BufRead,BufNewFile *.sc set softtabstop=4
@@ -65,6 +61,13 @@ let g:load_doxygen_syntax=1
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+
+" colors
+hi Folded ctermfg=LightGrey
+hi cComment ctermfg=Grey
+hi Comment ctermfg=Grey
+hi Error ctermbg=9 ctermfg=White
+hi String ctermfg=Red
 
 " Disable directional keys
 map  <up>    <nop>
