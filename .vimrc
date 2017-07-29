@@ -92,9 +92,6 @@ map <leader>l <C-w>l
 map <leader>n :lnext<CR>
 map <leader>p :lprev<CR>
 
-" insert a new line at the cursor
-map <leader>bh i<CR><ESC>
-
 " insert date as YYYY-MM-DD
 nnoremap <leader>td "=strftime("%Y-%m-%d")<CR>p
 nnoremap <F4> "=strftime("%Y-%m-%d")<CR>p
