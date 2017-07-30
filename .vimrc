@@ -139,6 +139,7 @@ map <F9> :Dispatch<CR>
 nmap <F3> @:
 
 " fugitive
+map <leader>gu :Git pull<CR>
 map <leader>gp :Dispatch! git push<CR>
 map <leader>gc :Gcommit -m ""<left>
 " write first to avoid common mistake
