@@ -16,10 +16,13 @@ set foldmethod=syntax
 set foldlevelstart=4 " start folding at 4 levels
 
 " Use (real) tabs of 4 on SuperCollider files
-autocmd BufRead,BufNewFile *.sc set tabstop=4
-autocmd BufRead,BufNewFile *.sc set softtabstop=4
-autocmd BufRead,BufNewFile *.sc set shiftwidth=4
-autocmd BufRead,BufNewFile *.sc set noexpandtab
+augroup filetype_sc
+    au!
+    au BufRead,BufNewFile *.sc set tabstop=4
+    au BufRead,BufNewFile *.sc set softtabstop=4
+    au BufRead,BufNewFile *.sc set shiftwidth=4
+    au BufRead,BufNewFile *.sc set noexpandtab
+augroup END
 
 " automatically reload files that have changed externally
 set autoread
@@ -114,11 +117,21 @@ inoremap <F4> <C-R>=strftime("%Y-%m-%d")<CR>
 " insert date as YYYY-MM-DD HH:MM:SS zone-offset
 nnoremap <leader>tld "=strftime('%Y-%m-%d %H:%M:%S %z')<CR>p
 
-" autocompile this file
-map <leader>cc : !g++ -Wall -Wpedantic -std=c++1z % -o %< && ./%< <CR>
-map <leader>cmc : !cd build && cmake .. && cd ..<CR>
-map <leader>cmb : !cmake --build ./build <CR>
-map <leader>cmi : !cmake --build ./build --target install <CR>
+" mappings for cpp files
+augroup filetype_cpp
+    au!
+    au FileType cpp map <leader>cc  : !g++ -Wall -Wpedantic -std=c++1z % -o %< && ./%< <CR>
+    au FileType cpp map <leader>cmc : !cd build && cmake .. && cd ..<CR>
+    au FileType cpp map <leader>cmb : !cmake --build ./build <CR>
+    au FileType cpp map <leader>cmi : !cmake --build ./build --target install <CR>
+augroup END
+
+" mappings for swift files, for use with spm
+augroup filetype_swift
+    au!
+    au FileType swift map <leader>b :!swift build
+    " TODO: mapping for ./build/debug/x
+augroup END
 
 " Apply YCM FixIt
 map <F8> :YcmCompleter FixIt<CR>
@@ -155,17 +168,24 @@ let g:ctrlp_open_single_match = ['buffer tags', 'buffer']
 
 " auto-reload vimrc on write
 augroup myvimrchooks
-  au!
-  autocmd bufwritepost .vimrc source ~/.vimrc
+    au!
+    autocmd bufwritepost .vimrc source ~/.vimrc
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""
 " filetype things
 "
 " strip trailing whitespace on save
-autocmd FileType vim,yaml,c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
+augroup trailing_whitespace
+    au!
+    au FileType vim,yaml,c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
+augroup END
+
 " set dispatch command for latex files
-autocmd FileType tex let b:dispatch = 'pdflatex %'
+augroup filetype_tex
+    au!
+    au FileType tex let b:dispatch = 'pdflatex %'
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""
 " selected templates & mappings from c-support by wolfgang mehner
