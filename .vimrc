@@ -146,7 +146,7 @@ map <leader>ga :w<CR>:!git ap<CR>
 map <leader>gh :!git ch -b<space>
 map <leader>gb :!git br<CR>
 map <leader>gk :!git ch<space>
-map <leader>gl :Git lg<CR>
+map <leader>gl :!git lg<CR>
 map <leader>gs :Gstatus<CR>
 map <leader>gr :!git reset<CR>
 
