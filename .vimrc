@@ -32,14 +32,10 @@ set cino+=L0:0g0N-st0
 let g:brian_cpp_flags = '-Wall -Wpedantic -std=c++1z'
 
 " For YCM
-
-"YCM will put icons in Vim's gutter on lines that have a diagnostic set.
-"Turning this off will also turn off the YcmErrorLine and YcmWarningLine
-"highlighting
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 1
+let g:ycm_enable_diagnostic_signs = 0             " gutter signs: they annoy me
+let g:ycm_enable_diagnostic_highlighting = 1      " highlighting: reasonably better
 let g:ycm_always_populate_location_list = 1       " default 0
 let g:ycm_open_loclist_on_ycm_diags = 1           " default 1
 
@@ -103,6 +99,7 @@ map <leader>j <C-w>j
 map <leader>k <C-w>k
 map <leader>l <C-w>l
 
+" moving between errors (YCM)
 map <leader>n :lnext<CR>
 map <leader>p :lprev<CR>
 
