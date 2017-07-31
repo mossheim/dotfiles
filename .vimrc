@@ -61,7 +61,7 @@ let g:load_doxygen_syntax=1
 " PYTHON CONFIG
 "
 let g:pymode_python = 'python3' " syntax checking for python3
-let g:pymode_options = 1 " turn off intrusive option changes introduced by pymode. typical...
+let g:pymode_options = 0 " turn off intrusive option changes introduced by pymode. typical...
 
 """"""""""""""""""""
 " PATHOGEN BEGIN
