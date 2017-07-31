@@ -61,17 +61,13 @@ let g:load_doxygen_syntax=1
 " PYTHON CONFIG
 "
 let g:pymode_python = 'python3' " syntax checking for python3
-
+let g:pymode_options = 1 " turn off intrusive option changes introduced by pymode. typical...
 
 """"""""""""""""""""
 " PATHOGEN BEGIN
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-
-" turn off python-mode's decision to force line numbers on users
-" couldn't find anything in the docs about configuring this earlier
-set nonumber
 
 " colors
 hi Folded ctermfg=LightGrey
