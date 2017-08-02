@@ -188,3 +188,9 @@ augroup END
 " block completion (good cross-language)
 inoremap  {<CR>    {<CR>}<Esc>O
 vnoremap  {<CR>   S{<CR>}<Esc>Pk=iB
+
+augroup filetype_python
+    au!
+    au FileType python inoremap '''<CR>  '''<CR>'''<Esc>O
+    au FileType python vnoremap '''<CR> S'''<CR>'''<Esc>Pk=iB
+augroup END
