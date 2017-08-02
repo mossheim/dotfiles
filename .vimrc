@@ -192,5 +192,5 @@ vnoremap  {<CR>   S{<CR>}<Esc>Pk=iB
 augroup filetype_python
     au!
     au FileType python inoremap '''<CR>  '''<CR>'''<Esc>O
-    au FileType python vnoremap '''<CR> S'''<CR>'''<Esc>Pk=iB
+    au FileType python nnoremap <leader>' i'''<CR>'''<Esc>O
 augroup END
