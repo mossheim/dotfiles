@@ -6,6 +6,7 @@ alias slack='/Applications/Slack.app/Contents/MacOS/Slack'
 alias pdfmerge='"/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py"'
 alias sclang='/Applications/SuperCollider.app/Contents/MacOS/sclang'
 alias p3='python3'
+alias gpoum='git pull upstream master && git push origin master'
 
 PS1='[\u@\h \W]$ '
 PATH=$PATH:$HOME/bin:/usr/local/opt/go/libexec/bin
