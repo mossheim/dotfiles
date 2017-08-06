@@ -123,8 +123,8 @@ augroup END
 " mappings for swift files, for use with spm
 augroup filetype_swift
     au!
-    au FileType swift map <leader>b :!swift build<CR>
-    au FileType swift map <leader>t :!swift test<CR>
+    au FileType swift map <leader>b  :!swift build<CR>
+    au FileType swift map <leader>tt :!swift test<CR>
     " TODO: mapping for ./build/debug/x
 augroup END
 
