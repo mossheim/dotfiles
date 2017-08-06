@@ -2,20 +2,6 @@
 " Brian Heim, Author
 " 2017
 
-" Basic config settings
-" colorscheme wombat256mod
-set exrc " Force to source .vimrc if present in cwd
-set secure " Adds security for non-main .vimrc
-set colorcolumn=100 " Highlight 100th column
-set textwidth=100
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set foldmethod=syntax
-set foldlevelstart=4 " start folding at 4 levels
-set backspace=2 " make backspace work like most other apps
-
 " Use (real) tabs of 4 on SuperCollider files
 augroup filetype_sc
     au!
@@ -68,6 +54,20 @@ let g:pymode_options = 0 " turn off intrusive option changes introduced by pymod
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+
+" Basic config settings
+" colorscheme wombat256mod
+set exrc " Force to source .vimrc if present in cwd
+set secure " Adds security for non-main .vimrc
+set colorcolumn=100 " Highlight 100th column
+set textwidth=100
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set foldmethod=syntax
+set foldlevelstart=4 " start folding at 4 levels
+set backspace=2 " make backspace work like most other apps
 
 " colors
 hi Folded ctermfg=LightGrey
