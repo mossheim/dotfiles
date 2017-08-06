@@ -8,6 +8,10 @@ alias sclang='/Applications/SuperCollider.app/Contents/MacOS/sclang'
 alias p3='python3'
 alias gpoum='git pull upstream master && git push origin master'
 
+# ls options
+alias ls='ls -lh'
+export CLICOLOR=
+
 PS1='[\u@\h \W]$ '
 PATH=$PATH:$HOME/bin:/usr/local/opt/go/libexec/bin
 
