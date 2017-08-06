@@ -124,6 +124,7 @@ augroup END
 augroup filetype_swift
     au!
     au FileType swift map <leader>b :!swift build<CR>
+    au FileType swift map <leader>t :!swift test<CR>
     " TODO: mapping for ./build/debug/x
 augroup END
 
