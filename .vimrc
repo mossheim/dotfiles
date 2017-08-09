@@ -143,18 +143,22 @@ map <F9> :Dispatch<CR>
 nmap <F3> @:
 
 " fugitive
-map <leader>gul :!git pull<CR>
-map <leader>gps :Dispatch! git push<CR>
-map <leader>gpnb :Dispatch! git br \| grep \* \| sed "s/[\* ]*//" \| xargs git push -u origin<CR>
+map <leader>gu :!git pull<CR>
+map <leader>gp :Dispatch! git push<CR>
+map <leader>gP :Dispatch! git br \| grep \* \| sed "s/[\* ]*//" \| xargs git push -u origin<CR>
+map <leader>gc :Gcommit -m ""<left>
+map <leader>gC :Gcommit -am ""<left>
 map <leader>gc :Gcommit -m ""<left>
 " write first to avoid common mistake
 map <leader>ga :w<CR>:!git ap<CR>
-map <leader>gh :!git ch -b<space>
+map <leader>gH :!git ch -b<space>
 map <leader>gb :!git br<CR>
-map <leader>gk :!git ch<space>
+map <leader>gh :!git ch<space>
+map <leader>gM :!git ch master<CR>
 map <leader>gl :!git lg<CR>
 map <leader>gs :Gstatus<CR>
 map <leader>gr :!git reset<CR>
+map <leader>gR :!git reset --hard<CR>
 map <leader>gm :!git merge<space>
 
 " config for vim-airline
