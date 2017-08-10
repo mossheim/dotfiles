@@ -13,7 +13,7 @@ alias ls='ls -lh'
 export CLICOLOR=
 
 # "git: clean branches"
-alias gitcb='git br --merged | grep -v master | xargs git br -d'
+alias gitcb='git checkout master && git branch --merged | grep -v master | xargs git branch -d'
 
 # SuperCollider commands
 alias scconf='cmake -GXcode -DCMAKE_PREFIX_PATH=`brew --prefix qt55` -DSUPERNOVA=ON ..'
