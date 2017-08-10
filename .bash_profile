@@ -12,7 +12,32 @@ alias gpoum='git pull upstream master && git push origin master'
 alias ls='ls -lh'
 export CLICOLOR=
 
+# "git: clean branches"
+alias gitcb='git br --merged | grep -v master | xargs git br -d'
+
+# SuperCollider commands
+alias scconf='cmake -GXcode -DCMAKE_PREFIX_PATH=`brew --prefix qt55` -DSUPERNOVA=ON ..'
+alias scmake='cmake --build . --target install --config Debug'
+
+export SC_REPO='/Users/brianheim/git/supercollider'
+sctest() {
+    cd "$SC_REPO/build"
+    # if building fails, reconfigure and build from scratch
+    if git fetch $1 && git checkout $2
+    then
+        if scmake
+        then
+            exit 0
+        else
+            scconf && scmake
+        fi
+    fi
+}
+
+# display config
 PS1='[\u@\h \W]$ '
+
+# PATHs
 PATH=$PATH:$HOME/bin:/usr/local/opt/go/libexec/bin
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
