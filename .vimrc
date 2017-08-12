@@ -141,6 +141,14 @@ nnoremap <leader>td "=strftime("%Y-%m-%d")<CR>p
 nnoremap <F4> "=strftime("%Y-%m-%d")<CR>p
 inoremap <F4> <C-R>=strftime("%Y-%m-%d")<CR>
 
+function! SynStack()
+    for id in synstack(line("."), col("."))
+        echo synIDattr(id, "name")
+    endfor
+endfunction
+
+map <F12> :call SynStack()<CR>
+
 " reveal syntax highlighting state of object under cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
