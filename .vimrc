@@ -70,11 +70,44 @@ set foldlevelstart=4 " start folding at 4 levels
 set backspace=2 " make backspace work like most other apps
 
 " colors
-hi Folded ctermfg=LightGrey
-hi cComment ctermfg=Grey
-hi Comment ctermfg=Grey
-hi Error ctermbg=9 ctermfg=White
-hi String ctermfg=Red
+hi ColorColumn               ctermbg=224
+
+" light style
+hi Boolean                   ctermfg=Cyan        cterm=bold
+hi Comment                   ctermfg=Grey
+hi Constant                  ctermfg=Cyan        cterm=bold
+hi Define                    ctermfg=Blue        cterm=bold
+hi Delimiter                 ctermfg=Black
+hi Error                     ctermfg=Black       ctermbg=218
+hi Function                  ctermfg=7           cterm=bold
+hi Identifier                ctermfg=DarkCyan    cterm=none
+hi Include                   ctermfg=11
+hi Number                    ctermfg=Blue
+hi PreCondit                 ctermfg=11
+hi PreProc                   ctermfg=11
+hi Special                   ctermfg=171
+hi SpecialComment            ctermfg=108         cterm=bold
+hi Statement                 ctermfg=DarkMagenta cterm=bold
+hi String                    ctermfg=Red
+hi Title                     ctermfg=DarkBlue    cterm=bold
+hi Todo                      ctermfg=DarkGrey    ctermbg=185
+hi Type                      ctermfg=DarkGreen   cterm=bold
+
+" doxygen
+hi doxygenSpecialOneLineDesc ctermfg=109         cterm=none
+hi doxygenKeyword            ctermfg=109         cterm=bold
+hi doxygenBrief              ctermfg=109         cterm=bold
+hi doxygenBody               ctermfg=109         cterm=bold
+hi doxygenSpecial            ctermfg=109         cterm=bold
+
+" vim-specific
+hi Directory                 ctermfg=57
+hi ErrorMsg                  ctermfg=Black       ctermbg=218
+hi MoreMsg                   ctermfg=70
+hi Question                  ctermfg=70
+hi WarningMsg                ctermfg=Black       ctermbg=LightRed
+hi Visual                    ctermbg=255         term=reverse
+hi MatchParen                ctermbg=159         term=reverse
 
 " Disable directional keys
 map  <up>    <nop>
