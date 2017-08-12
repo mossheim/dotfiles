@@ -208,6 +208,7 @@ let g:airline_section_y = ''
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_skip_empty_sections = 1
+let g:airline_theme='papercolor'
 
 " config for ctrl-p
 let g:ctrlp_max_depth = 6 " to avoid bloating search time when in a non-git directory
