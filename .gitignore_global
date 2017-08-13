@@ -15,6 +15,7 @@ userscripts
 # vim
 *.swo
 *.swp
+.vimrc
 
 # CLion
 .idea
