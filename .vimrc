@@ -73,14 +73,14 @@ set backspace=2 " make backspace work like most other apps
 hi ColorColumn               ctermbg=224
 
 " light style
-hi Boolean                   ctermfg=Cyan        cterm=bold
-hi Comment                   ctermfg=Grey
-hi Constant                  ctermfg=Cyan        cterm=bold
+hi Boolean                   ctermfg=DarkMagenta cterm=bold
+hi Comment                   ctermfg=Grey        cterm=italic
+hi Constant                  ctermfg=DarkMagenta cterm=bold
 hi Define                    ctermfg=Blue        cterm=bold
 hi Delimiter                 ctermfg=Black
 hi Error                     ctermfg=Black       ctermbg=218
-hi Function                  ctermfg=7           cterm=bold
-hi Identifier                ctermfg=DarkCyan    cterm=none
+hi Function                  ctermfg=15          cterm=none
+hi Identifier                ctermfg=Cyan        cterm=none
 hi Include                   ctermfg=11
 hi Number                    ctermfg=Blue
 hi PreCondit                 ctermfg=11
@@ -92,6 +92,12 @@ hi String                    ctermfg=Red
 hi Title                     ctermfg=DarkBlue    cterm=bold
 hi Todo                      ctermfg=DarkGrey    ctermbg=185
 hi Type                      ctermfg=DarkGreen   cterm=bold
+
+" swift
+hi swiftTypeDefinition       ctermfg=1 cterm=bold
+
+" markdown
+hi markdownCode              ctermfg=Cyan
 
 " doxygen
 hi doxygenSpecialOneLineDesc ctermfg=109         cterm=none
@@ -108,6 +114,8 @@ hi Question                  ctermfg=70
 hi WarningMsg                ctermfg=Black       ctermbg=LightRed
 hi Visual                    ctermbg=255         term=reverse
 hi MatchParen                ctermbg=159         term=reverse
+hi DiffText                  ctermbg=189         term=reverse
+hi DiffChange                ctermbg=229         term=reverse
 
 " Disable directional keys
 map  <up>    <nop>
