@@ -201,6 +201,7 @@ map <leader>gC :Gcommit -am ""<left>
 map <leader>gc :Gcommit -m ""<left>
 " write first to avoid common mistake
 map <leader>ga :w<CR>:!git ap<CR>
+map <leader>gA :!git add<space>
 map <leader>gH :!git ch -b<space>
 map <leader>gb :!git br<CR>
 map <leader>gh :!git ch<space>
