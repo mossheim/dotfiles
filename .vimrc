@@ -19,6 +19,7 @@ set cino+=L0:0g0N-st0
 let g:brian_cpp_flags = '-Wall -Wpedantic -std=c++1z'
 
 " For YCM
+" let g:loaded_youcompleteme = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 let g:ycm_enable_diagnostic_signs = 0             " gutter signs: they annoy me
