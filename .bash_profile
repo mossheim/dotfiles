@@ -15,6 +15,13 @@ export CLICOLOR=
 # "git: clean branches"
 alias gitcb='git checkout master && git branch --merged | grep -v master | xargs git branch -d'
 
+# git aliases (matching .vimrc)
+alias gs='git status'
+alias gc='git commit -m'
+alias gp='git push'
+alias gu='git pull'
+alias gP='git push -u origin `git symbolic-ref --short HEAD`'
+
 # clone from GitHub
 ghclone() {
     git clone https://github.com/$1/$2
