@@ -17,6 +17,12 @@ userscripts
 *.swp
 .vimrc
 
+# ycm config files
+.ycm_extra_conf.py
+
+# compilation database files
+compile_commands.json
+
 # CLion
 .idea
 cmake-build-debug
