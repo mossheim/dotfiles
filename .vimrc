@@ -18,32 +18,6 @@ set autoread
 set cino+=L0:0g0N-st0
 let g:brian_cpp_flags = '-Wall -Wpedantic -std=c++1z'
 
-" For YCM
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-
-let g:ycm_enable_diagnostic_signs = 0                  " gutter signs: they annoy me
-let g:ycm_enable_diagnostic_highlighting = 1           " highlighting: reasonably better
-let g:ycm_always_populate_location_list = 1            " default 0
-let g:ycm_open_loclist_on_ycm_diags = 1                " default 1
-
-let g:ycm_min_num_of_chars_for_completion = 2          " default 2
-let g:ycm_min_num_identifier_candidate_chars = 4       " default 0
-let g:ycm_allow_changing_updatetime = 0                " default 1; wait longer before updating
-
-let g:ycm_complete_in_strings = 1                      " default 1
-let g:ycm_collect_identifiers_from_tags_files = 1      " default 0
-let g:ycm_path_to_python_interpreter = ''              " default ''
-
-let g:ycm_server_use_vim_stdout = 0                    " default 0 (logging to console)
-let g:ycm_log_level = 'error'                          " default info
-
-let g:ycm_confirm_extra_conf = 0
-
-let g:ycm_seed_identifiers_with_syntax = 1             " default 0
-let g:ycm_autoclose_preview_window_after_insertion = 1 " default 1
-
-let g:ycm_disable_for_files_larger_than_kb = 300       " default 1000
-
 " C++ compiler warnings
 let g:C_CFlags = g:brian_cpp_flags
 
