@@ -180,6 +180,19 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " insert date as YYYY-MM-DD HH:MM:SS zone-offset
 nnoremap <leader>tld "=strftime('%Y-%m-%d %H:%M:%S %z')<CR>p
 
+" taken from Saleem Abdulrasool (compnerd)
+function! s:CLangShortcuts()
+  inoremap #in #include<space>
+  inoremap #ifn #ifndef<space>
+  inoremap #ifd #ifdef<space>
+  inoremap #d #define<space>
+  inoremap #els #else
+  inoremap #eli #elif<space>
+  inoremap #en #endif
+  inoremap #p #pragma<space>
+  inoremap #u #undef<space>
+endfunction
+
 " mappings for cpp files
 augroup filetype_cpp
     au!
@@ -187,6 +200,7 @@ augroup filetype_cpp
     au FileType cpp map <leader>cmc : !cd build && cmake .. && cd ..<CR>
     au FileType cpp map <leader>cmb : !cmake --build ./build <CR>
     au FileType cpp map <leader>cmi : !cmake --build ./build --target install <CR>
+    au FileType cpp,c execute s:CLangShortcuts()
 augroup END
 
 " mappings for swift files, for use with spm
