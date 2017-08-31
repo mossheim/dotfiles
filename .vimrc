@@ -77,8 +77,9 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set foldmethod=indent
-set foldlevelstart=3 " start folding at 3 levels
+set foldlevelstart=4 " start folding at 4 levels
 set backspace=2 " make backspace work like most other apps
+set formatoptions+=r
 
 " colors
 hi ColorColumn               ctermbg=224
