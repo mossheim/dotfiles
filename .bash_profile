@@ -33,7 +33,7 @@ ghclone() {
 }
 
 # SuperCollider commands
-alias scconf='cmake -GXcode -DCMAKE_PREFIX_PATH=`brew --prefix qt55` -DSUPERNOVA=ON ..'
+alias scconf='cmake -GXcode -DRULE_LAUNCH_COMPILE=ccache -DCMAKE_PREFIX_PATH=`brew --prefix qt55` -DSUPERNOVA=ON ..'
 alias scmake='cmake --build . --target install --config Debug'
 
 export SC_REPO='/Users/brianheim/git/supercollider'
