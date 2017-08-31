@@ -19,7 +19,6 @@ set cino+=L0:0g0N-st0
 let g:brian_cpp_flags = '-Wall -Wpedantic -std=c++1z'
 
 " For YCM
-" let g:loaded_youcompleteme = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 let g:ycm_enable_diagnostic_signs = 0                  " gutter signs: they annoy me
@@ -27,7 +26,7 @@ let g:ycm_enable_diagnostic_highlighting = 1           " highlighting: reasonabl
 let g:ycm_always_populate_location_list = 1            " default 0
 let g:ycm_open_loclist_on_ycm_diags = 1                " default 1
 
-let g:ycm_min_num_of_chars_for_completion = 3          " default 2
+let g:ycm_min_num_of_chars_for_completion = 2          " default 2
 let g:ycm_min_num_identifier_candidate_chars = 4       " default 0
 let g:ycm_allow_changing_updatetime = 0                " default 1; wait longer before updating
 
