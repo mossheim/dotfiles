@@ -232,7 +232,7 @@ let g:ctrlp_open_single_match = ['buffer tags', 'buffer']
 " auto-reload vimrc on write
 augroup myvimrchooks
     au!
-    autocmd bufwritepost .vimrc source ~/.vimrc
+    autocmd bufwritepost .vimrc source ~/.vimrc | AirlineRefresh
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""
