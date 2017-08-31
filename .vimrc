@@ -97,7 +97,6 @@ hi Include                   ctermfg=11
 hi Number                    ctermfg=Blue
 hi PreCondit                 ctermfg=11
 hi PreProc                   ctermfg=11
-hi Special                   ctermfg=171
 hi SpecialComment            ctermfg=108         cterm=italic
 hi Statement                 ctermfg=DarkMagenta cterm=bold
 hi String                    ctermfg=Red
