@@ -251,7 +251,7 @@ let g:airline_theme='papercolor'
 
 " config for ctrl-p
 let g:ctrlp_max_depth = 6 " to avoid bloating search time when in a non-git directory
-let g:ctrlp_max_files = 2000 " to avoid bloating search time when in a non-git directory
+let g:ctrlp_show_hidden = 0 " show hidden files (dotfiles)
 let g:ctrlp_open_multiple_files = '2vjr' " open at most 2 tabs when opening multiple files
 let g:ctrlp_open_single_match = ['buffer tags', 'buffer']
 
