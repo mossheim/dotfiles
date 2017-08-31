@@ -128,7 +128,7 @@ map <leader>j <C-w>j
 map <leader>k <C-w>k
 map <leader>l <C-w>l
 
-" moving between errors (YCM)
+" moving between errors
 map <leader>n :lnext<CR>
 map <leader>p :lprev<CR>
 
@@ -188,9 +188,6 @@ augroup filetype_swift
     au FileType swift map <leader>tp :!swift test --parallel<CR>
     " TODO: mapping for ./build/debug/x
 augroup END
-
-" Apply YCM FixIt
-map <F8> :YcmCompleter FixIt<CR>
 
 " vim-dispatch
 map <F9> :Dispatch<CR>
