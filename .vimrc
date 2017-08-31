@@ -161,6 +161,7 @@ map <leader>ev :e ~/.vimrc<CR>
 " insert date as YYYY-MM-DD
 nnoremap <leader>td "=strftime("%Y-%m-%d")<CR>p
 nnoremap <F4> "=strftime("%Y-%m-%d")<CR>p
+vnoremap <F4> "=strftime("%Y-%m-%d")<CR>p
 inoremap <F4> <C-R>=strftime("%Y-%m-%d")<CR>
 
 function! SynStack()
