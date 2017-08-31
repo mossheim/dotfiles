@@ -61,7 +61,9 @@ let g:pymode_rope = 0 " turn off rope script
 """"""""""""""""""""
 " PATHOGEN BEGIN
 execute pathogen#infect()
+
 syntax on
+syntax sync fromstart " parse from beginning to get accurate syntax highlighting
 filetype plugin indent on
 
 " Basic config settings
