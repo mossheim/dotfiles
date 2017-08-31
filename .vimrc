@@ -45,6 +45,8 @@ set exrc " Force to source .vimrc if present in cwd
 set secure " Adds security for non-main .vimrc
 set colorcolumn=100 " Highlight 100th column
 set textwidth=100
+set nois " no incremental search
+set nohls " no highlight search matches
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -53,6 +55,7 @@ set foldmethod=indent
 set foldlevelstart=4 " start folding at 4 levels
 set backspace=2 " make backspace work like most other apps
 set formatoptions+=r
+set noic " don't ignore case while searching (but do use smartcase)
 
 " colors
 hi ColorColumn               ctermbg=224
