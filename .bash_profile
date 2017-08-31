@@ -29,7 +29,7 @@ alias gf='git fetch'
 
 # clone from GitHub
 ghclone() {
-    git clone https://github.com/$1/$2
+    git clone --recursive https://github.com/$1/$2
 }
 
 # SuperCollider commands
