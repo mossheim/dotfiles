@@ -239,6 +239,7 @@ map <leader>gs :Gstatus<CR>
 map <leader>gr :!git reset<CR>
 map <leader>gR :!git reset --hard<CR>
 map <leader>gm :!git merge<space>
+map <leader>gt :!git tag -a<space>
 
 " config for vim-airline
 let g:airline_section_x = ''
