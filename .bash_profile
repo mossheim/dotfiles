@@ -51,6 +51,14 @@ sctest() {
     fi
 }
 
+# mimic rg if not on platform
+if which rg 2>/dev/null 0>/dev/null
+then
+    function rg() {
+      grep -rI $1 .
+    }
+fi
+
 # display config
 PS1='[\u@\h \W]$ '
 
