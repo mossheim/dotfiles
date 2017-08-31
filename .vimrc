@@ -127,6 +127,10 @@ hi MatchParen                ctermbg=159         term=reverse
 hi DiffText                  ctermbg=189         term=reverse
 hi DiffChange                ctermbg=229         term=reverse
 
+" ---- Splits ----
+" resize splits when windows are resized
+autocmd VimResized * wincmd =
+
 " Disable directional keys
 map  <up>    <nop>
 map  <down>  <nop>
