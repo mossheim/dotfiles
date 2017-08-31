@@ -19,8 +19,13 @@ alias gitcb='git checkout master && git branch --merged | grep -v master | xargs
 alias gs='git status'
 alias gc='git commit -m'
 alias gp='git push'
+alias gb='git branch'
+alias ga='git add -p'
 alias gu='git pull'
+alias gH='git ch -b'
 alias gP='git push -u origin `git symbolic-ref --short HEAD`'
+alias gM='git checkout master'
+alias gf='git fetch'
 
 # clone from GitHub
 ghclone() {
