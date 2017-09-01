@@ -72,3 +72,9 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH="/usr/local/opt/bison/bin:$PATH"
+
+# use xterm-256color when on Linux; otherwise, backspace is broken otherwise in iTerm
+if [[ `uname` = "Linux" ]]
+then
+    export TERM=xterm-256color
+fi
