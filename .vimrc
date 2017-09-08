@@ -168,6 +168,7 @@ function! s:CLangShortcuts()
   inoremap #en #endif
   inoremap #p #pragma<space>
   inoremap #u #undef<space>
+  inoremap uns; using namespace std;<CR>
 endfunction
 
 " mappings for cpp files
