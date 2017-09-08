@@ -29,6 +29,7 @@ alias gM='git checkout master'
 alias gf='git fetch'
 alias gr='git reset'
 alias gR='git reset --hard'
+alias gl='git lg'
 
 # clone from GitHub
 ghclone() {
