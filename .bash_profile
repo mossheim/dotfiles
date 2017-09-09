@@ -75,7 +75,7 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 export PATH="/usr/local/opt/bison/bin:$PATH"
 
 # Settings to use on Yale's fedora boxes
-if `hostname | grep "zoo\.cs\.yale\.edu"`
+if hostname | grep "zoo\.cs\.yale\.edu" >/dev/null
 then
     # for iTerm supporting backspace
     export TERM=xterm-256color
