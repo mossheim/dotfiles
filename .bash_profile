@@ -56,7 +56,7 @@ sctest() {
 }
 
 # mimic rg if not on platform
-if ! which rg 2>/dev/null 0>/dev/null
+if ! which rg >/dev/null 2>/dev/null
 then
     function rg() {
         grep -rI $1 .
