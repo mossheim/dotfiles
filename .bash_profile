@@ -56,7 +56,7 @@ sctest() {
 }
 
 # mimic rg if not on platform
-if ! which rg >/dev/null 2>/dev/null
+if ! which rg 2>/dev/null >/dev/null
 then
     function rg() {
         grep -rI $1 .
@@ -68,6 +68,7 @@ PS1='[\u@\h \W]$ '
 
 # PATHs
 PATH=$PATH:$HOME/bin:/usr/local/opt/go/libexec/bin
+PATH=$PATH:$HOME/Library/Haskell/bin
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
