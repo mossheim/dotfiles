@@ -68,6 +68,7 @@ PS1='[\u@\h \W]$ '
 
 # PATHs
 PATH=$PATH:$HOME/bin:/usr/local/opt/go/libexec/bin
+PATH=$PATH:$HOME/Library/Haskell/bin
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
