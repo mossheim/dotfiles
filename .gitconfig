@@ -11,7 +11,7 @@
 	name = Brian Heim
 	email = brianlheim@gmail.com
 [commit]
-	template = /Users/brianheim/.stCommitMsg
+	template = ~/.stCommitMsg
 [merge]
 	conflictstyle = diff3
 [color "branch"]
