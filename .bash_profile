@@ -13,7 +13,15 @@ alias ls='ls -lh'
 export CLICOLOR=
 
 # "git: clean branches"
-alias gitcb='git checkout master && git branch --merged | grep -v master | xargs git branch -d'
+# alias gitcb='git checkout master && git branch --merged | grep -v master | xargs git branch -d'
+gitcb() {
+    if [[ -z "$1" ]]; then
+        echo "Need branch name."
+        exit 1
+    fi
+    git checkout "$1"
+    git branch --merged | grep -v "$1" | xargs git branch -d
+}
 
 # git aliases (matching .vimrc)
 alias gs='git status'
