@@ -264,6 +264,7 @@ vnoremap  {<CR>   S{<CR>}<Esc>Pk=iB
 augroup filetype_python
     au!
     au FileType python inoremap '''<CR>  '''<CR>'''<Esc>O
+    au FileType python inoremap """<CR>  """<CR>"""<Esc>O
     au FileType python nnoremap <leader>' i'''<CR>'''<Esc>O
     au FileType python nnoremap <leader>nem iif __name__ == "__main__":<CR>
 augroup END
