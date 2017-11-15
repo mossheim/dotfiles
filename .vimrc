@@ -272,3 +272,7 @@ augroup filetype_python
     au FileType python nnoremap <leader>' i'''<CR>'''<Esc>O
     au FileType python nnoremap <leader>nem iif __name__ == "__main__":<CR>
 augroup END
+
+" underlines current line with ='s or -'s
+nnoremap <leader>u= Yp0v$r=
+nnoremap <leader>u- Yp0v$r-
