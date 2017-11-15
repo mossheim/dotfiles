@@ -60,6 +60,9 @@ set noic " don't ignore case while searching (but do use smartcase)
 " colors
 hi ColorColumn               ctermbg=224
 
+" Link char to string (o.w. linked to 'constant')
+hi link Character String
+
 " light style
 hi Boolean                   ctermfg=DarkMagenta cterm=bold
 hi Comment                   ctermfg=Grey        cterm=italic
