@@ -27,9 +27,11 @@ let g:load_doxygen_syntax=1
 """""""""""""""""""
 " PYTHON CONFIG
 "
-let g:pymode_python = 'python3' " syntax checking for python3
-let g:pymode_options = 0 " turn off intrusive option changes introduced by pymode. typical...
-let g:pymode_rope = 0 " turn off rope script
+let g:pymode_python = 'python3'       " syntax checking for python3
+let g:pymode_options = 0              " turn off intrusive option changes introduced by pymode. typical...
+let g:pymode_rope = 0                 " turn off rope script
+let g:pymode_rope_complete_on_dot = 0 " turn off pymode rope
+let g:pymode_rope_completion = 0      " turn off pymode rope already!
 
 """"""""""""""""""""
 " PATHOGEN BEGIN
@@ -106,6 +108,7 @@ hi Visual                    ctermbg=255         term=reverse
 hi MatchParen                ctermbg=159         term=reverse
 hi DiffText                  ctermbg=189         term=reverse
 hi DiffChange                ctermbg=229         term=reverse
+hi PmenuSel                  ctermbg=219
 
 " ---- Splits ----
 " resize splits when windows are resized
@@ -272,6 +275,7 @@ augroup filetype_python
     au FileType python inoremap '''<Space>  '''<Space><Space>'''<Esc>Bhi
     au FileType python inoremap """<Space>  """<Space><Space>"""<Esc>Bhi
     au FileType python nnoremap <leader>' i'''<CR>'''<Esc>O
+    au FileType python nnoremap <leader>" i"""<CR>"""<Esc>O
     au FileType python nnoremap <leader>nem iif __name__ == "__main__":<CR>
 augroup END
 
