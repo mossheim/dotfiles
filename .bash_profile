@@ -6,7 +6,12 @@ alias slack='/Applications/Slack.app/Contents/MacOS/Slack'
 alias pdfmerge='"/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py"'
 alias sclang='/Applications/SuperCollider.app/Contents/MacOS/sclang'
 alias p3='python3'
+alias p2='python2'
 alias gpoum='git pull upstream master && git push origin master'
+alias l=ls
+alias v=vim
+
+alias sed='sed -E'
 
 # ls options
 alias ls='ls -lh'
