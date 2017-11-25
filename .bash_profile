@@ -38,11 +38,13 @@ alias gu='git pull'
 alias gh='git ch'
 alias gH='git ch -b'
 alias gP='git push -u origin `git symbolic-ref --short HEAD`'
+alias gm='git merge'
 alias gM='git checkout master'
 alias gf='git fetch'
 alias gr='git reset'
 alias gR='git reset --hard'
 alias gl='git lg'
+alias gd='git diff'
 
 # clone from GitHub
 ghclone() {
