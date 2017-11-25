@@ -105,6 +105,7 @@ hi Visual                    ctermbg=255         term=reverse
 hi MatchParen                ctermbg=159         term=reverse
 hi DiffText                  ctermbg=189         term=reverse
 hi DiffChange                ctermbg=229         term=reverse
+hi PmenuSel                  ctermbg=219
 
 " ---- Splits ----
 " resize splits when windows are resized
