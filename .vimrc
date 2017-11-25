@@ -245,7 +245,7 @@ augroup END
 " strip trailing whitespace on save
 augroup trailing_whitespace
     au!
-    au FileType python,swift,vim,yaml,c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
+    au FileType swift,vim,yaml,c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
 augroup END
 
 " set dispatch command for latex files
