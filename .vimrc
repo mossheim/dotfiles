@@ -59,8 +59,13 @@ set backspace=2 " make backspace work like most other apps
 set formatoptions+=r
 set noic " don't ignore case while searching (but do use smartcase)
 
+set list listchars=space:·,trail:·,tab:├─
+set showbreak=>\ 
+
 " colors
 hi ColorColumn               ctermbg=224
+
+hi SpecialKey                ctermfg=250
 
 " Link char to string (o.w. linked to 'constant')
 hi link Character String
