@@ -47,10 +47,12 @@ set exrc " Force to source .vimrc if present in cwd
 set secure " Adds security for non-main .vimrc
 set colorcolumn=100 " Highlight 100th column
 set textwidth=100
-set nois " no incremental search
+set is " yes incremental search
 set nohls " no highlight search matches
+set ignorecase smartcase
 set tabstop=4
 set softtabstop=4
+set belloff=esc
 set shiftwidth=4
 set expandtab
 set foldmethod=indent
