@@ -61,8 +61,8 @@ set backspace=2 " make backspace work like most other apps
 set formatoptions+=r
 set noic " don't ignore case while searching (but do use smartcase)
 
-set list listchars=space:·,trail:·,tab:├─
-set showbreak=>\ 
+set list listchars=space:·,trail:×,tab:→\ " listchars, including for tab
+set showbreak=+++\ " line continuation begins with '+++ '
 
 " colors
 hi ColorColumn               ctermbg=224
