@@ -24,6 +24,10 @@ let g:C_CFlags = g:brian_cpp_flags
 " Doxygen highlighting
 let g:load_doxygen_syntax=1
 
+" utl.vim settings
+let g:utl_cfg_hdl_scm_http_system = "silent !open -a Firefox '%u'"
+let g:utl_cfg_hdl_scm_http=g:utl_cfg_hdl_scm_http_system
+
 """""""""""""""""""
 " PYTHON CONFIG
 "
@@ -116,6 +120,15 @@ hi MatchParen                ctermbg=159         term=reverse
 hi DiffText                  ctermbg=189         term=reverse
 hi DiffChange                ctermbg=229         term=reverse
 hi PmenuSel                  ctermbg=219
+
+" orgmode
+hi link org_heading1 Title
+hi link org_heading2 Constant
+hi link org_heading3 Type
+hi link org_heading4 String
+hi link org_heading5 PreProc
+hi link org_heading6 Identifier
+hi link org_heading7 Special
 
 " ---- Splits ----
 " resize splits when windows are resized
