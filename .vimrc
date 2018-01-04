@@ -28,6 +28,9 @@ let g:load_doxygen_syntax=1
 let g:utl_cfg_hdl_scm_http_system = "silent !open -a Firefox '%u'"
 let g:utl_cfg_hdl_scm_http=g:utl_cfg_hdl_scm_http_system
 
+" vim-orgmode settings
+let g:org_agenda_files=['~/org/*.org']
+
 """""""""""""""""""
 " PYTHON CONFIG
 "
