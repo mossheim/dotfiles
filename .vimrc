@@ -40,6 +40,8 @@ let g:pymode_rope = 0                 " turn off rope script
 let g:pymode_rope_complete_on_dot = 0 " turn off pymode rope
 let g:pymode_rope_completion = 0      " turn off pymode rope already!
 
+let maplocalleader=' '
+
 """"""""""""""""""""
 " PATHOGEN BEGIN
 execute pathogen#infect()
@@ -47,6 +49,7 @@ execute pathogen#infect()
 syntax on
 syntax sync fromstart " parse from beginning to get accurate syntax highlighting
 filetype plugin indent on
+
 
 " Basic config settings
 " colorscheme wombat256mod
@@ -62,7 +65,7 @@ set softtabstop=4
 set belloff=esc
 set shiftwidth=4
 set expandtab
-set foldmethod=indent
+set foldmethod=manual
 set foldlevelstart=4 " start folding at 4 levels
 set backspace=2 " make backspace work like most other apps
 set formatoptions+=r
@@ -123,6 +126,7 @@ hi MatchParen                ctermbg=159         term=reverse
 hi DiffText                  ctermbg=189         term=reverse
 hi DiffChange                ctermbg=229         term=reverse
 hi PmenuSel                  ctermbg=219
+hi Folded                    ctermbg=255         ctermfg=246
 
 " orgmode
 hi link org_heading1 Title
@@ -132,6 +136,7 @@ hi link org_heading4 String
 hi link org_heading5 PreProc
 hi link org_heading6 Identifier
 hi link org_heading7 Special
+hi org_todo_keyword_DONE ctermfg=64 ctermbg=194
 
 " ---- Splits ----
 " resize splits when windows are resized
@@ -245,6 +250,9 @@ map <leader>gR :!git reset --hard<CR>
 map <leader>gm :!git merge<space>
 map <leader>gt :!git tag -a<space>
 
+" ripgrep
+map <leader>rg :!rg ""<left>
+
 " config for vim-airline
 let g:airline_section_x = ''
 let g:airline_section_y = ''
@@ -255,8 +263,12 @@ let g:airline_theme='papercolor'
 
 " config for ctrl-p
 let g:ctrlp_max_depth = 6 " to avoid bloating search time when in a non-git directory
-let g:ctrlp_show_hidden = 0 " show hidden files (dotfiles)
-let g:ctrlp_open_multiple_files = '2vjr' " open at most 2 tabs when opening multiple files
+let g:ctrlp_show_hidden = 1 " show hidden files (dotfiles)
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/](\.git|CMakeFiles)$',
+    \ 'file': '\v(\.gitignore|.*\.swp)$'
+    \ }
+let g:ctrlp_open_multiple_files = '3vjr' " open at most this many tabs when opening multiple files
 let g:ctrlp_open_single_match = ['buffer tags', 'buffer']
 
 " auto-reload vimrc on write
@@ -303,5 +315,5 @@ augroup filetype_python
 augroup END
 
 " underlines current line with ='s or -'s
-nnoremap <leader>u= Yp0v$r=
-nnoremap <leader>u- Yp0v$r-
+nnoremap <leader>u= Yp0v$r=k
+nnoremap <leader>u- Yp0v$r-k
