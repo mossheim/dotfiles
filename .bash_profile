@@ -107,3 +107,5 @@ then
     # for cs422
     source /c/cs422/env.sh
 fi
+
+set -o vi
