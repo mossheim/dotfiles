@@ -4,12 +4,13 @@ alias Sublime='Sublime Text'
 alias firefox='/Applications/Firefox.app/Contents/MacOS/firefox'
 alias slack='/Applications/Slack.app/Contents/MacOS/Slack'
 alias pdfmerge='"/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py"'
-alias sclang='/Applications/SuperCollider.app/Contents/MacOS/sclang'
 alias p3='python3'
 alias p2='python2'
 alias gpoum='git pull upstream master && git push origin master'
 alias l=ls
 alias v=vim
+
+PATH=$PATH:/Applications/SuperCollider.app/Contents/MacOS
 
 alias sed='sed -E'
 
@@ -49,6 +50,10 @@ alias gd='git diff'
 # clone from GitHub
 ghclone() {
     git clone --recursive https://github.com/$1/$2
+}
+
+mcd() {
+    mkdir "$1" && cd "$1"
 }
 
 # SuperCollider commands
