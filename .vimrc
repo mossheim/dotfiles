@@ -83,27 +83,27 @@ hi SpecialKey                ctermfg=250
 hi link Character String
 
 " light style
-hi Boolean                   ctermfg=DarkMagenta cterm=bold
+hi Boolean                   ctermfg=11          cterm=NONE
 hi Comment                   ctermfg=Grey        cterm=italic
-hi Constant                  ctermfg=DarkMagenta cterm=bold
+hi Constant                  ctermfg=11          cterm=NONE
 hi Define                    ctermfg=Blue        cterm=bold
 hi Delimiter                 ctermfg=Black
 hi Error                     ctermfg=Black       ctermbg=218
 hi Function                  ctermfg=15          cterm=none
 hi Identifier                ctermfg=Cyan        cterm=none
-hi Include                   ctermfg=11
+hi Include                   ctermfg=DarkMagenta
 hi Number                    ctermfg=Blue
-hi PreCondit                 ctermfg=11
-hi PreProc                   ctermfg=11
+hi PreCondit                 ctermfg=DarkMagenta
+hi PreProc                   ctermfg=White
 hi SpecialComment            ctermfg=108         cterm=italic
-hi Statement                 ctermfg=DarkMagenta cterm=bold
+hi Statement                 ctermfg=11          cterm=NONE
 hi String                    ctermfg=Red
 hi Title                     ctermfg=DarkBlue    cterm=bold
 hi Todo                      ctermfg=DarkGrey    ctermbg=185
-hi Type                      ctermfg=DarkGreen   cterm=bold
+hi Type                      ctermfg=Blue        cterm=NONE
 
 " swift
-hi swiftTypeDefinition       ctermfg=1 cterm=bold
+hi swiftTypeDefinition       ctermfg=1           cterm=bold
 
 " markdown
 hi markdownCode              ctermfg=Cyan
