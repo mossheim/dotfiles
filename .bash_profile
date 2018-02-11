@@ -59,6 +59,7 @@ mcd() {
 # SuperCollider commands
 alias scconf='cmake -GXcode -DRULE_LAUNCH_COMPILE=ccache -DCMAKE_PREFIX_PATH=`brew --prefix qt55` -DSUPERNOVA=ON ..'
 alias scmake='cmake --build . --target install --config Debug'
+alias scmx='cmake --build . --target install --config Debug | xcpretty'
 alias scopen='open ~/git/supercollider/build/Install/SuperCollider/SuperCollider.app'
 
 scoc() {
