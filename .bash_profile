@@ -5,12 +5,13 @@ alias firefox='/Applications/Firefox.app/Contents/MacOS/firefox'
 alias slack='/Applications/Slack.app/Contents/MacOS/Slack'
 alias pdfmerge='"/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py"'
 alias p3='python3'
-alias p2='python2'
+alias p2='python2.7'
 alias gpoum='git pull upstream master && git push origin master'
 alias l=ls
 alias v=vim
 
 PATH=$PATH:/Applications/SuperCollider.app/Contents/MacOS
+PATH=$PATH:/Applications/CMake.app/Contents/bin
 
 alias sed='sed -E'
 
