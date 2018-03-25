@@ -201,6 +201,7 @@ function! s:CLangShortcuts()
   inoremap #eli #elif<space>
   inoremap #en #endif
   inoremap #p #pragma<space>
+  inoremap #o #pragma once
   inoremap #u #undef<space>
   inoremap uns; using namespace std;<CR>
 endfunction
@@ -302,6 +303,8 @@ inoremap  [<CR>    [<CR>]<Esc>O
 vnoremap  [<CR>   S[<CR>]<Esc>Pk=iB
 inoremap  (<CR>    (<CR>)<Esc>O
 vnoremap  (<CR>   S(<CR>)<Esc>Pk=iB
+" for C++ classes/structs
+inoremap  {;<CR>   {<CR>};<Esc>O
 
 augroup filetype_python
     au!
