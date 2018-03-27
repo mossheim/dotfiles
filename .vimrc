@@ -173,6 +173,7 @@ nnoremap <leader>td "=strftime("%Y-%m-%d")<CR>p
 nnoremap <F4> "=strftime("%Y-%m-%d")<CR>p
 vnoremap <F4> "=strftime("%Y-%m-%d")<CR>p
 inoremap <F4> <C-R>=strftime("%Y-%m-%d")<CR>
+inoremap <F5> Brian Heim <C-R>=strftime("%Y-%m-%d")<CR>
 
 function! SynStack()
     for id in synstack(line("."), col("."))
