@@ -15,7 +15,7 @@ augroup END
 set autoread
 
 " C++ indentation rules
-set cino+=L0:0g0N-st0
+set cino+=L0:0g0N-st0(1s
 let g:brian_cpp_flags = '-Wall -Wpedantic -std=c++1z'
 
 " C++ compiler warnings
