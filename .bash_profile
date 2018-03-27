@@ -19,6 +19,9 @@ alias sed='sed -E'
 alias ls='ls -lh'
 export CLICOLOR=
 
+# locale
+export LC_ALL=en_US.UTF-8
+
 # "git: clean branches"
 # alias gitcb='git checkout master && git branch --merged | grep -v master | xargs git branch -d'
 gitcb() {
