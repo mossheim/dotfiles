@@ -69,7 +69,6 @@ set foldmethod=manual
 set foldlevelstart=4 " start folding at 4 levels
 set backspace=2 " make backspace work like most other apps
 set formatoptions+=r
-set noic " don't ignore case while searching (but do use smartcase)
 
 set list listchars=space:·,trail:×,tab:→\ " listchars, including for tab
 set showbreak=+++\ " line continuation begins with '+++ '
