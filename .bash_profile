@@ -67,6 +67,7 @@ alias scmake='cmake --build . --target install --config Debug'
 alias scmx='cmake --build . --target install --config Debug | xcpretty'
 alias scmx2='cmake --build . --target SuperCollider --config Debug | xcpretty'
 alias scopen='open ~/git/supercollider/build/Install/SuperCollider/SuperCollider.app'
+alias scopen2='open ~/git/supercollider/build/editors/sc-ide/Debug/SuperCollider.app'
 
 scoc() {
     find ~/git/supercollider/SCClassLibrary -name "$1" -exec open {} \;
