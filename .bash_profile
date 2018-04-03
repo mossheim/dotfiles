@@ -36,6 +36,7 @@ gitcb() {
 # git aliases (matching .vimrc)
 alias gs='git status'
 alias gc='git commit -m'
+alias ge='git commit --amend' # I use it more like "emend"
 alias gp='git push'
 alias gb='git branch'
 alias ga='git add -p'

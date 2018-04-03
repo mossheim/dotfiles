@@ -237,6 +237,8 @@ map <leader>gP :Dispatch! git br \| grep \* \| sed "s/[\* ]*//" \| xargs git pus
 map <leader>gc :Gcommit -m ""<left>
 map <leader>gC :Gcommit -am ""<left>
 map <leader>gc :Gcommit -m ""<left>
+" I use it more like "emend"
+map <leader>ge :Gcommit --amend<CR>
 " write first to avoid common mistake
 map <leader>ga :w<CR>:!git ap<CR>
 map <leader>gA :!git add<space>
