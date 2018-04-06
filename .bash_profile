@@ -61,13 +61,20 @@ mcd() {
     mkdir "$1" && cd "$1"
 }
 
+scmt() {
+    cmake --build . --target $1 --config Debug | xcpretty
+}
+
 # SuperCollider commands
 alias scconf='cmake -GXcode -DRULE_LAUNCH_COMPILE=ccache -DCMAKE_PREFIX_PATH=`brew --prefix qt55` -DSUPERNOVA=ON ..'
 alias scmake='cmake --build . --target install --config Debug'
-alias scmx='cmake --build . --target install --config Debug | xcpretty'
-alias scmx2='cmake --build . --target SuperCollider --config Debug | xcpretty'
+alias scmx='scmt install'
+alias scmx2='scmt SuperCollider'
 alias scopen='open ~/git/supercollider/build/Install/SuperCollider/SuperCollider.app'
 alias scopen2='open ~/git/supercollider/build/editors/sc-ide/Debug/SuperCollider.app'
+alias scms='scmt sclang && scmt SuperCollider && scopen2'
+# user extension dir
+alias sced='cd /Users/brianheim/Library/Application\ Support/SuperCollider'
 
 scoc() {
     find ~/git/supercollider/SCClassLibrary -name "$1" -exec open {} \;
