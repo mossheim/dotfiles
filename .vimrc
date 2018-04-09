@@ -76,7 +76,7 @@ set showbreak=+++\ " line continuation begins with '+++ '
 " colors
 hi ColorColumn               ctermbg=224
 
-hi SpecialKey                ctermfg=250
+hi SpecialKey                ctermfg=252
 
 " Link char to string (o.w. linked to 'constant')
 hi link Character String
