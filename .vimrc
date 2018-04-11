@@ -175,6 +175,9 @@ vnoremap <F4> "=strftime("%Y-%m-%d")<CR>p
 inoremap <F4> <C-R>=strftime("%Y-%m-%d")<CR>
 inoremap <F5> Brian Heim <C-R>=strftime("%Y-%m-%d")<CR>
 
+" insert date as YYYY-MM-DD HH:MM:SS zone-offset
+nnoremap <leader>tld "=strftime('%Y-%m-%d %H:%M:%S %z')<CR>p
+
 function! SynStack()
     for id in synstack(line("."), col("."))
         echo synIDattr(id, "name")
@@ -187,9 +190,6 @@ map <F12> :call SynStack()<CR>
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-" insert date as YYYY-MM-DD HH:MM:SS zone-offset
-nnoremap <leader>tld "=strftime('%Y-%m-%d %H:%M:%S %z')<CR>p
 
 " taken from Saleem Abdulrasool (compnerd)
 function! s:CLangShortcuts()
