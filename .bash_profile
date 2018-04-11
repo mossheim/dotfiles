@@ -9,6 +9,7 @@ alias p2='python2.7'
 alias gpoum='git pull upstream master && git push origin master'
 alias l=ls
 alias v=vim
+alias f=fg
 
 PATH=$PATH:/Applications/SuperCollider.app/Contents/MacOS
 PATH=$PATH:/Applications/CMake.app/Contents/bin
