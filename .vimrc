@@ -73,6 +73,8 @@ set formatoptions+=r
 set list listchars=space:·,trail:×,tab:→\ " listchars, including for tab
 set showbreak=+++\ " line continuation begins with '+++ '
 
+set lazyredraw " makes macros so much faster
+
 " colors
 hi ColorColumn               ctermbg=224
 
