@@ -324,3 +324,30 @@ augroup END
 " underlines current line with ='s or -'s
 nnoremap <leader>u= Yp0v$r=k
 nnoremap <leader>u- Yp0v$r-k
+
+" moves current arg in a param list to back of the list
+
+" this version shifts the current parameter one right without modifying whitespace
+" assumes no [](){}, in the parameter list
+nnoremap <leader>sl ?[(,{[]<CR>wvf,geyf,wv/[,)}\]]<CR>gepF,?[(,{[]<CR>wvf,gep
+
+" this version assumes there is no whitespace around the parameters except after the comma
+" assumes no [](){}, in the parameter list
+nnoremap <leader>sL ?[(,{[]<CR>lvt,d2lv/[,)}\]]<CR>pF,P
+
+" this version rotates all parameters left and puts the leftmost parameter at the end
+" assumes (abc, def) whitespacing
+" is ok with ()[]{} in parameter list as long as % catches it fine, but not ,
+nnoremap <leader>sb %ldt,wv%%hp%p
+
+" same thing, but all parameters right
+nnoremap <leader>sf %lv%%F,hdwv%%hp%p
+
+" try it out:
+" (b, a)
+" (cd  , ab )
+" (5 + 8(), george* 7)
+" (abc, def, geh, ijkl)
+" (ab, cd)
+" (b, a, c)
+" {c, a, b}
