@@ -1,19 +1,14 @@
 [core]
-	excludesfile = /Users/brianheim/.gitignore_global
+	excludesfile = /~/.gitignore_global
 	editor = /usr/bin/vim
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[user]
-	name = Brian Heim
-	email = brianlheim@gmail.com
-[commit]
-	template = ~/.stCommitMsg
 [merge]
 	conflictstyle = diff3
+	tool = bc3
+[mergetool]
+	bc3 = trustExitCode
+[user]
+	name = Brian Heim
+	email = bheim@drwholdings.com
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -27,13 +22,7 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-[alias]
-  st = status
-  co = commit
-  br = branch
-  ch = checkout
-  di = diff
-  lg = log --oneline --graph --decorate
-  ap = add -p
-  syncup = pull upstream master
-  syncor = push origin master
+[color]
+	ui = true
+[push]
+	default = matching

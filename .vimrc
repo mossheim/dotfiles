@@ -56,7 +56,7 @@ filetype plugin indent on
 set exrc " Force to source .vimrc if present in cwd
 set secure " Adds security for non-main .vimrc
 set colorcolumn=100 " Highlight 100th column
-set textwidth=100
+set textwidth=0
 set is " yes incremental search
 set nohls " no highlight search matches
 set ignorecase smartcase
@@ -69,6 +69,7 @@ set foldmethod=manual
 set foldlevelstart=4 " start folding at 4 levels
 set backspace=2 " make backspace work like most other apps
 set formatoptions+=r
+set cursorline
 
 set list listchars=space:·,trail:×,tab:→\ " listchars, including for tab
 set showbreak=+++\ " line continuation begins with '+++ '
@@ -78,7 +79,7 @@ set lazyredraw " makes macros so much faster
 " colors
 hi ColorColumn               ctermbg=224
 
-hi SpecialKey                ctermfg=252
+hi SpecialKey                ctermfg=253
 
 " Link char to string (o.w. linked to 'constant')
 hi link Character String
@@ -128,6 +129,8 @@ hi DiffText                  ctermbg=189         term=reverse
 hi DiffChange                ctermbg=229         term=reverse
 hi PmenuSel                  ctermbg=219
 hi Folded                    ctermbg=255         ctermfg=246
+
+hi CursorLine                ctermbg=230         cterm=none
 
 " orgmode
 hi link org_heading1 Title
@@ -235,21 +238,23 @@ nmap <F3> @:
 " fugitive
 map <leader>gu :!git pull<CR>
 map <leader>gp :Dispatch! git push<CR>
-map <leader>gP :Dispatch! git br \| grep \* \| sed "s/[\* ]*//" \| xargs git push -u origin<CR>
+map <leader>gP :Dispatch! git branch \| grep \* \| sed "s/[\* ]*//" \| xargs git push -u origin<CR>
 map <leader>gc :Gcommit -m ""<left>
 map <leader>gC :Gcommit -am ""<left>
 map <leader>gc :Gcommit -m ""<left>
+" view staged changes
+map <leader>gd :!git diff --cached<CR>
 " I use it more like "emend"
 map <leader>ge :Gcommit --amend<CR>
 " write first to avoid common mistake
-map <leader>ga :w<CR>:!git ap<CR>
+map <leader>ga :w<CR>:!git add -p<CR>
 map <leader>gA :!git add<space>
-map <leader>gH :!git ch -b<space>
-map <leader>gb :!git br<CR>
-map <leader>gh :!git ch<space>
-map <leader>gM :!git ch master<CR>
-map <leader>gl :!git lg<CR>
-map <leader>gs :Gstatus<CR>
+map <leader>gH :!git checkout -b<space>
+map <leader>gb :!git branch<CR>
+map <leader>gh :!git checkout<space>
+map <leader>gl :!git log --oneline --graph --decorate<CR>
+map <leader>gs :!git status -sb<CR>
+map <leader>gS :Gstatus<CR>
 map <leader>gr :!git reset<CR>
 map <leader>gR :!git reset --hard<CR>
 map <leader>gm :!git merge<space>
@@ -267,7 +272,7 @@ let g:airline_skip_empty_sections = 1
 let g:airline_theme='papercolor'
 
 " config for ctrl-p
-let g:ctrlp_max_depth = 6 " to avoid bloating search time when in a non-git directory
+let g:ctrlp_max_depth = 7 " to avoid bloating search time when in a non-git directory
 let g:ctrlp_show_hidden = 1 " show hidden files (dotfiles)
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/](\.git|CMakeFiles)$',
@@ -275,6 +280,7 @@ let g:ctrlp_custom_ignore = {
     \ }
 let g:ctrlp_open_multiple_files = '3vjr' " open at most this many tabs when opening multiple files
 let g:ctrlp_open_single_match = ['buffer tags', 'buffer']
+let g:ctrlp_switch_buffer = ''
 
 " auto-reload vimrc on write
 augroup myvimrchooks
@@ -288,7 +294,7 @@ augroup END
 " strip trailing whitespace on save
 augroup trailing_whitespace
     au!
-    au FileType sml,swift,yaml,c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
+    "au FileType sml,swift,yaml,c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
 augroup END
 
 " set dispatch command for latex files
@@ -351,3 +357,18 @@ nnoremap <leader>sf %lv%%F,hdwv%%hp%p
 " (ab, cd)
 " (b, a, c)
 " {c, a, b}
+
+" tags
+nnoremap <leader>mt :Dispatch! ctags -R src<CR>
+nnoremap <leader>[ :tprev<CR>
+nnoremap <leader>] :tnext<CR>
+
+nnoremap <leader>, :cprev<CR>zz
+nnoremap <leader>. :cnext<CR>zz
+
+" get italics
+set t_ZH=[3m
+set t_ZR=[23m
+
+" toggle listchars
+nnoremap <F8> :set list!<CR>
