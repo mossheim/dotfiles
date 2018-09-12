@@ -288,7 +288,7 @@ augroup END
 " strip trailing whitespace on save
 augroup trailing_whitespace
     au!
-    au FileType sml,swift,yaml,c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
+    "au FileType sml,swift,yaml,c,cpp,h,hpp,cc,hh,cxx,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
 augroup END
 
 " set dispatch command for latex files
@@ -351,3 +351,7 @@ nnoremap <leader>sf %lv%%F,hdwv%%hp%p
 " (ab, cd)
 " (b, a, c)
 " {c, a, b}
+"
+"
+" TO redo chinese flashcards:
+" %s/\(.*\) \([a-z]*[1-5]\S*\s*\)*\s*\(.*\) \(.*\)/\3   \1 \2   \4
