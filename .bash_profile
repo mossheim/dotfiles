@@ -67,7 +67,7 @@ scmt() {
 }
 
 # SuperCollider commands
-alias scconf='cmake -GXcode -DRULE_LAUNCH_COMPILE=ccache -DCMAKE_PREFIX_PATH=`brew --prefix qt55` -DSUPERNOVA=ON ..'
+alias scconf='cmake -GXcode -DRULE_LAUNCH_COMPILE=ccache -DCMAKE_PREFIX_PATH=`brew --prefix qt5` -DSUPERNOVA=ON ..'
 alias scmake='cmake --build . --target install --config Debug'
 alias scmx='scmt install'
 alias scmx2='scmt SuperCollider'
@@ -131,3 +131,8 @@ then
 fi
 
 set -o vi
+if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
+
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
