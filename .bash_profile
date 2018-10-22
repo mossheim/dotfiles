@@ -4,7 +4,11 @@ alias l=ls
 alias v=vim
 alias f=fg
 
-alias sed='sed -E'
+alias rs='. ~/.bash_profile'
+
+vimpatch() {
+    grep "+++" | sed "s:\+\+\+ b/::g" | xargs vim
+}
 
 # ls options
 alias ls='ls -lh --color'
@@ -28,7 +32,7 @@ gitcb() {
 alias gs='git status -sb'
 alias gc='git commit -m'
 alias ge='git commit --amend' # I use it more like "emend"
-alias gp='git push'
+alias gp='git push origin'
 alias gb='git branch'
 alias gd='git diff --cached' # show staged changes
 alias ga='git add -p'
@@ -42,7 +46,7 @@ alias gf='git fetch'
 alias gr='git reset'
 alias gR='git reset --hard'
 alias gl='git log --oneline --graph --decorate'
-alias gd='git diff'
+alias gL='git log --branches --remotes --tags --oneline --graph --decorate'
 
 # clone from GitHub
 ghclone() {

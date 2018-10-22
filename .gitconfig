@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /~/.gitignore_global
+	excludesfile = /home/bheim/.gitignore_global
 	editor = /usr/bin/vim
 [merge]
 	conflictstyle = diff3

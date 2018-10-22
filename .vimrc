@@ -46,6 +46,8 @@ let maplocalleader=' '
 " PATHOGEN BEGIN
 execute pathogen#infect()
 
+packadd! matchit
+
 syntax on
 syntax sync fromstart " parse from beginning to get accurate syntax highlighting
 filetype plugin indent on
@@ -237,7 +239,7 @@ nmap <F3> @:
 
 " fugitive
 map <leader>gu :!git pull<CR>
-map <leader>gp :Dispatch! git push<CR>
+map <leader>gp :Dispatch! git push origin<CR>
 map <leader>gP :Dispatch! git branch \| grep \* \| sed "s/[\* ]*//" \| xargs git push -u origin<CR>
 map <leader>gc :Gcommit -m ""<left>
 map <leader>gC :Gcommit -am ""<left>
@@ -253,6 +255,7 @@ map <leader>gH :!git checkout -b<space>
 map <leader>gb :!git branch<CR>
 map <leader>gh :!git checkout<space>
 map <leader>gl :!git log --oneline --graph --decorate<CR>
+map <leader>gl :!git log --branches --remotes --tags --oneline --graph --decorate<CR>
 map <leader>gs :!git status -sb<CR>
 map <leader>gS :Gstatus<CR>
 map <leader>gr :!git reset<CR>
@@ -262,6 +265,9 @@ map <leader>gt :!git tag -a<space>
 
 " ripgrep
 map <leader>rg :!rg ""<left>
+map <leader>rw "tyiw:!rg "<C-R>t"<CR>
+map <leader>rW "tyiW:!rg "<C-R>t"<CR>
+vmap <leader>rv "ty:!rg "<C-R>t"<CR>
 
 " config for vim-airline
 let g:airline_section_x = ''
@@ -372,3 +378,7 @@ set t_ZR=[23m
 
 " toggle listchars
 nnoremap <F8> :set list!<CR>
+
+" toggle cpp/h of file
+nnoremap <leader>ec :e %<BS>cpp<CR>
+nnoremap <leader>eh :e %<BS><BS><BS>h<CR>

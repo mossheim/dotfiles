@@ -25,3 +25,6 @@ compile_commands.json
 # CLion
 .idea
 cmake-build-debug
+
+# ctags
+tags
