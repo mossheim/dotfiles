@@ -255,13 +255,14 @@ map <leader>gH :!git checkout -b<space>
 map <leader>gb :!git branch<CR>
 map <leader>gh :!git checkout<space>
 map <leader>gl :!git log --oneline --graph --decorate<CR>
-map <leader>gl :!git log --branches --remotes --tags --oneline --graph --decorate<CR>
+map <leader>gL :!git log --branches --remotes --tags --oneline --graph --decorate<CR>
 map <leader>gs :!git status -sb<CR>
 map <leader>gS :Gstatus<CR>
 map <leader>gr :!git reset<CR>
 map <leader>gR :!git reset --hard<CR>
 map <leader>gm :!git merge<space>
 map <leader>gt :!git tag -a<space>
+map <leader>gi :!git rebase -i<CR>
 
 " ripgrep
 map <leader>rg :!rg ""<left>
