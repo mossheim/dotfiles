@@ -1,6 +1,5 @@
 alias p3='python3'
 alias p2='python2.7'
-alias l=ls
 alias v=vim
 alias f=fg
 
@@ -12,6 +11,7 @@ vimpatch() {
 
 # ls options
 alias ls='ls -lh --color'
+alias l=ls
 export CLICOLOR=
 
 # locale
@@ -48,6 +48,7 @@ alias gr='git reset'
 alias gR='git reset --hard'
 alias gl='git log --oneline --graph --decorate'
 alias gL='git log --branches --remotes --tags --oneline --graph --decorate'
+alias gi='git rebase -i'
 
 # clone from GitHub
 ghclone() {
@@ -59,7 +60,7 @@ mcd() {
 }
 
 # display config
-PS1='[\u@\h \W]$ '
+PS1='[\[\e[0;32m\]\u\[\e[0m\]@\h \[\e[0;36m\]\W\[\e[0m\]]$ '
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH="/usr/local/opt/bison/bin:$PATH"

@@ -213,6 +213,9 @@ function! s:CLangShortcuts()
   inoremap uns; using namespace std;<CR>
 endfunction
 
+" recognize .config files as xml
+autocmd BufRead,BufNewFile *.config set filetype=xml
+
 " mappings for cpp files
 augroup filetype_cpp
     au!
@@ -240,6 +243,8 @@ nmap <F3> @:
 " fugitive
 map <leader>gu :!git pull<CR>
 map <leader>gp :Dispatch! git push origin<CR>
+" use with care...
+map <leader>gFP :Dispatch! git push origin --force<CR>
 map <leader>gP :Dispatch! git branch \| grep \* \| sed "s/[\* ]*//" \| xargs git push -u origin<CR>
 map <leader>gc :Gcommit -m ""<left>
 map <leader>gC :Gcommit -am ""<left>

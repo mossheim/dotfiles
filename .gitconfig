@@ -26,3 +26,7 @@
 	ui = true
 [push]
 	default = matching
+[rerere]
+	enabled = true
+[rebase]
+	autosquash = true
