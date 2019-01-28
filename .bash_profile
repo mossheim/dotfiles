@@ -17,6 +17,9 @@ export CLICOLOR=
 # locale
 export LC_ALL=en_US.UTF-8
 
+# editor
+export EDITOR=vim
+
 # "git: clean branches"
 # alias gitcb='git checkout master && git branch --merged | grep -v master | xargs git branch -d'
 gitcb() {
@@ -46,9 +49,18 @@ alias gM='git checkout master'
 alias gf='git fetch'
 alias gr='git reset'
 alias gR='git reset --hard'
+alias gd='git diff'
 alias gl='git log --oneline --graph --decorate'
 alias gL='git log --branches --remotes --tags --oneline --graph --decorate'
 alias gi='git rebase -i'
+
+alias gcf='git commit --fixup'
+alias gcs='git commit --squash'
+
+# put the last commit on a new branch
+gUH() {
+    git checkout -b $1 -q && git checkout - -q && git reset --hard HEAD^ -q && git checkout $1 -q
+}
 
 # clone from GitHub
 ghclone() {

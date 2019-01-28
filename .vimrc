@@ -76,6 +76,9 @@ set cursorline
 set list listchars=space:·,trail:×,tab:→\ " listchars, including for tab
 set showbreak=+++\ " line continuation begins with '+++ '
 
+set diffopt+=algorithm:patience
+set diffopt+=indent-heuristic
+
 set lazyredraw " makes macros so much faster
 
 " colors
@@ -126,13 +129,18 @@ hi MoreMsg                   ctermfg=70
 hi Question                  ctermfg=70
 hi WarningMsg                ctermfg=Black       ctermbg=LightRed
 hi Visual                    ctermbg=255         term=reverse
-hi MatchParen                ctermbg=159         term=reverse
+hi MatchParen                ctermbg=117         term=reverse
 hi DiffText                  ctermbg=189         term=reverse
 hi DiffChange                ctermbg=229         term=reverse
 hi PmenuSel                  ctermbg=219
 hi Folded                    ctermbg=255         ctermfg=246
 
 hi CursorLine                ctermbg=230         cterm=none
+
+hi DiffAdd                   ctermbg=193  term=bold    guibg=LightBlue    cterm=bold
+hi DiffChange                ctermbg=229 term=reverse guibg=LightMagenta
+hi DiffDelete                ctermfg=196 ctermbg=224  guibg=LightCyan    term=bold  guifg=Blue gui=bold
+hi DiffText                  ctermbg=195 guibg=Red    term=reverse       gui=bold
 
 " orgmode
 hi link org_heading1 Title
@@ -246,9 +254,10 @@ map <leader>gp :Dispatch! git push origin<CR>
 " use with care...
 map <leader>gFP :Dispatch! git push origin --force<CR>
 map <leader>gP :Dispatch! git branch \| grep \* \| sed "s/[\* ]*//" \| xargs git push -u origin<CR>
-map <leader>gc :Gcommit -m ""<left>
+map <leader>gcc :Gcommit -m ""<left>
+map <leader>gcf :!git commit --fixup<space>
+map <leader>gcs :!git commit --squash<space>
 map <leader>gC :Gcommit -am ""<left>
-map <leader>gc :Gcommit -m ""<left>
 " view staged changes
 map <leader>gd :!git diff --cached<CR>
 " I use it more like "emend"

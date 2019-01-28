@@ -3,9 +3,10 @@
 	editor = /usr/bin/vim
 [merge]
 	conflictstyle = diff3
-	tool = bc3
+	tool = vimdiff
 [mergetool]
-	bc3 = trustExitCode
+	prompt = false
+	keepBackup = false
 [user]
 	name = Brian Heim
 	email = bheim@drwholdings.com
