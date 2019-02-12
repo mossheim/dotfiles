@@ -2,8 +2,8 @@ alias p3='python3'
 alias p2='python2.7'
 alias v=vim
 alias f=fg
-
 alias rs='. ~/.bash_profile'
+alias ni=ninja
 
 vimpatch() {
     grep "+++" | sed "s:\+\+\+ b/::g" | xargs vim
@@ -49,7 +49,6 @@ alias gM='git checkout master'
 alias gf='git fetch'
 alias gr='git reset'
 alias gR='git reset --hard'
-alias gd='git diff'
 alias gl='git log --oneline --graph --decorate'
 alias gL='git log --branches --remotes --tags --oneline --graph --decorate'
 alias gi='git rebase -i'
@@ -69,6 +68,11 @@ ghclone() {
 
 mcd() {
     mkdir "$1" && cd "$1"
+}
+
+# rg for matches and open in vim
+vimrg() {
+    vim $(rg -l "$@" | xargs)
 }
 
 # display config
