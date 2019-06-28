@@ -57,8 +57,8 @@ filetype plugin indent on
 " colorscheme wombat256mod
 set exrc " Force to source .vimrc if present in cwd
 set secure " Adds security for non-main .vimrc
-set colorcolumn=100 " Highlight 100th column
-set textwidth=0
+set colorcolumn=120 " Highlight 100th column
+set textwidth=120
 set is " yes incremental search
 set nohls " no highlight search matches
 set ignorecase smartcase
@@ -183,6 +183,9 @@ map <leader>p :lprev<CR>
 " shortcut for editing vimrc
 map <leader>ev :e ~/.vimrc<CR>
 
+" edit prev buffer & delete current
+map <leader>dc <C-^>:bd #<CR>
+
 " insert date as YYYY-MM-DD
 nnoremap <leader>td "=strftime("%Y-%m-%d")<CR>p
 nnoremap <F4> "=strftime("%Y-%m-%d")<CR>p
@@ -243,6 +246,12 @@ augroup filetype_swift
     " TODO: mapping for ./build/debug/x
 augroup END
 
+" mappings for git commit files (turn spellcheck on!)
+augroup filetype_gitcommit
+    au!
+    au FileType gitcommit set spell
+augroup END
+
 " vim-dispatch
 map <F9> :Dispatch<CR>
 
@@ -277,6 +286,7 @@ map <leader>gR :!git reset --hard<CR>
 map <leader>gm :!git merge<space>
 map <leader>gt :!git tag -a<space>
 map <leader>gi :!git rebase -i<CR>
+map <leader>gf :!git clang-format -fq<CR><CR>
 
 " ripgrep
 map <leader>rg :!rg ""<left>
