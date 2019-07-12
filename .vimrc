@@ -81,11 +81,6 @@ set diffopt+=indent-heuristic
 
 set lazyredraw " makes macros so much faster
 
-" colors
-hi ColorColumn               ctermbg=224
-
-hi SpecialKey                ctermfg=253
-
 " Link char to string (o.w. linked to 'constant')
 hi link Character String
 
@@ -141,6 +136,11 @@ hi DiffAdd                   ctermbg=193  term=bold    guibg=LightBlue    cterm=
 hi DiffChange                ctermbg=229 term=reverse guibg=LightMagenta
 hi DiffDelete                ctermfg=196 ctermbg=224  guibg=LightCyan    term=bold  guifg=Blue gui=bold
 hi DiffText                  ctermbg=195 guibg=Red    term=reverse       gui=bold
+
+" colors
+hi ColorColumn               ctermbg=224
+
+hi SpecialKey                ctermfg=253
 
 " orgmode
 hi link org_heading1 Title
@@ -293,6 +293,12 @@ map <leader>rg :!rg ""<left>
 map <leader>rw "tyiw:!rg "<C-R>t"<CR>
 map <leader>rW "tyiW:!rg "<C-R>t"<CR>
 vmap <leader>rv "ty:!rg "<C-R>t"<CR>
+
+" typedef to using
+nmap <leader>t2u :%s/typedef \+\(.\+\) \+\(\w\+\);/using \2 = \1;<CR>
+
+" comment TODO
+nmap <leader>ctd I// <Esc>A TODO<Esc>
 
 " config for vim-airline
 let g:airline_section_x = ''
