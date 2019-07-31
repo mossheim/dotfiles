@@ -421,6 +421,43 @@ function! SwitchToOrEdit(bufname)
     endif
 endfunction
 
-" toggle cpp/h of file
+" "Edit Cpp"/"Edit Header"
+" Switches to .cpp/.h version of current file. If already in header/cpp, don't switch.
 nnoremap <leader>ec q:icall SwitchToOrEdit("<C-r>#<Esc>:s/\.h$/.cpp/e<CR>A")<CR>
 nnoremap <leader>eh q:icall SwitchToOrEdit("<C-r>#<Esc>:s/\.cpp$/.h/e<CR>A")<CR>
+
+" Update Signature In Header
+"
+" This will take the signature of the function on the current line and update the
+" corresponding declaration in the header.
+"
+" Assumes:
+" - using this from a .cpp file
+" - If file is foo.cpp, header is foo.h
+" - Signature is on one line in both definition and declaration
+" - Declaration in header is indented by >=4 spaces
+"
+" Caveats:
+" - clobbers buffer b
+" - only updates whatever is on the same line as the function name (i.e. maybe not template params etc.)
+" - will jump to first func with same name in header
+"
+" Possible improvements -- jump to class first in case some other class in the header also has the same function?
+nmap <leader>usih :w<CR>yy ehggpA;<Esc>:s/\(\w\+::\)\+/<CR>f(b"byiwdd/    \w\+ <C-r>b(.*).*;$<CR>pkdwjPkdd:w<CR><C-^>
+
+" Update Signature In Cpp
+"
+" This will take the signature of the function on the current line and update the
+" corresponding definition in the cpp file.
+"
+" Assumes:
+" - using this from a .h file
+" - If file is foo.h, impl is foo.cpp
+" - Signature is on one line in both definition and declaration
+"
+" Caveats:
+" - clobbers buffers b and c
+" - clobbers mark z
+" - only updates whatever is on the same line as the function name (i.e. maybe not template params etc.)
+" - will jump to first func with same class::name in cpp file
+nmap <leader>usic mz:w<CR>"byy?^ *class<CR>/class<CR>w"cyiw ecgg"bpf(B"cPa::<Esc>$x0dwf(B"byt("cyydd/<C-r>b<CR>Vp:w<CR><C-^>'z
