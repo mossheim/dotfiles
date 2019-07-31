@@ -410,6 +410,17 @@ set t_ZR=[23m
 " toggle listchars
 nnoremap <F8> :set list!<CR>
 
+" helper function -- if buffer exists, switch to it, otherwise edit it
+" Added this because otherwise using :e means we lose previous position in file.
+function! SwitchToOrEdit(bufname)
+    let bnr = bufnr(a:bufname)
+    if bnr > 0
+        :exe 'b ' . bnr
+    else
+        :exe 'e ' . a:bufname
+    endif
+endfunction
+
 " toggle cpp/h of file
-nnoremap <leader>ec :e %<BS>cpp<CR>
-nnoremap <leader>eh :e %<BS><BS><BS>h<CR>
+nnoremap <leader>ec q:icall SwitchToOrEdit("<C-r>#<Esc>:s/\.h$/.cpp/e<CR>A")<CR>
+nnoremap <leader>eh q:icall SwitchToOrEdit("<C-r>#<Esc>:s/\.cpp$/.h/e<CR>A")<CR>
