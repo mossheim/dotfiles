@@ -1,27 +1,24 @@
-alias lldbox='cd ~/Dropbox\ \(Love\ Local\ Design\)/Love\ Local\ Design\ Team\ Folder'
-alias bribox='cd ~/Dropbox\ \(Personal\)/'
-alias Sublime='Sublime Text'
-alias firefox='/Applications/Firefox.app/Contents/MacOS/firefox'
-alias slack='/Applications/Slack.app/Contents/MacOS/Slack'
-alias pdfmerge='"/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py"'
 alias p3='python3'
 alias p2='python2.7'
-alias gpoum='git pull upstream master && git push origin master'
-alias l=ls
 alias v=vim
 alias f=fg
+alias rs='. ~/.bash_profile'
+alias ni=ninja
 
-PATH=$PATH:/Applications/SuperCollider.app/Contents/MacOS
-PATH=$PATH:/Applications/CMake.app/Contents/bin
-
-alias sed='sed -E'
+vimpatch() {
+    grep "+++" | sed "s:\+\+\+ b/::g" | xargs vim
+}
 
 # ls options
-alias ls='ls -lh'
+alias ls='ls -lh --color'
+alias l=ls
 export CLICOLOR=
 
 # locale
 export LC_ALL=en_US.UTF-8
+
+# editor
+export EDITOR=vim
 
 # "git: clean branches"
 # alias gitcb='git checkout master && git branch --merged | grep -v master | xargs git branch -d'
@@ -35,23 +32,34 @@ gitcb() {
 }
 
 # git aliases (matching .vimrc)
-alias gs='git status'
+alias gs='git status -sb'
 alias gc='git commit -m'
 alias ge='git commit --amend' # I use it more like "emend"
-alias gp='git push'
+alias gp='git push origin'
 alias gb='git branch'
+alias gd='git diff --cached' # show staged changes
 alias ga='git add -p'
 alias gu='git pull'
-alias gh='git ch'
-alias gH='git ch -b'
+alias gh='git checkout'
+alias gH='git checkout -b'
+alias gv='git checkout -' # 'git checkout preVious'
 alias gP='git push -u origin `git symbolic-ref --short HEAD`'
 alias gm='git merge'
 alias gM='git checkout master'
 alias gf='git fetch'
 alias gr='git reset'
 alias gR='git reset --hard'
-alias gl='git lg'
-alias gd='git diff'
+alias gl='git log --oneline --graph --decorate'
+alias gL='git log --branches --remotes --tags --oneline --graph --decorate'
+alias gi='git rebase -i'
+
+alias gcf='git commit --fixup'
+alias gcs='git commit --squash'
+
+# put the last commit on a new branch
+gUH() {
+    git checkout -b $1 -q && git checkout - -q && git reset --hard HEAD^ -q && git checkout $1 -q
+}
 
 # clone from GitHub
 ghclone() {
@@ -85,49 +93,23 @@ scoh() {
     find ~/git/supercollider/HelpSource -name "$1" -exec open {} \;
 }
 
-export SC_REPO='/Users/brianheim/git/supercollider'
-sctest() {
-    cd "$SC_REPO/build"
-    # if building fails, reconfigure and build from scratch
-    if git fetch $1 && git checkout $2
-    then
-        if scmake
-        then
-            exit 0
-        else
-            scconf && scmake
-        fi
-    fi
+# rg for matches and open in vim
+vimrg() {
+    vim $(rg -l "$@" | xargs)
 }
 
-# mimic rg if not on platform
-if ! which rg 2>/dev/null >/dev/null
-then
-    function rg() {
-        grep -rI $1 .
-    }
-fi
-
 # display config
-PS1='[\u@\h \W]$ '
-
-# PATHs
-PATH=$PATH:$HOME/bin:/usr/local/opt/go/libexec/bin
-PATH=$PATH:$HOME/Library/Haskell/bin
-PATH=$PATH:$HOME/git/supercollider/build/Install/SuperCollider/SuperCollider.app/Contents/MacOS
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+PS1='[\[\e[0;32m\]\u\[\e[0m\]@\h \[\e[0;36m\]\W\[\e[0m\]]$ '
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH="/usr/local/opt/bison/bin:$PATH"
 
-# Settings to use on Yale's fedora boxes
-if hostname | grep "zoo\.cs\.yale\.edu" >/dev/null
-then
-    # for iTerm supporting backspace
-    export TERM=xterm-256color
-    # for cs422
-    source /c/cs422/env.sh
+set -o vi
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
 fi
 
 set -o vi
@@ -138,3 +120,8 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Untracked
+if [ -f ~/.bash_profile_extra ]; then
+    . ~/.bash_profile_extra
+fi

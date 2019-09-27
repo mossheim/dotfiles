@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/brianheim/.gitignore_global
+	excludesfile = /home/bheim/.gitignore_global
 	editor = /usr/bin/vim
 	commentchar = @
 [user]
@@ -10,6 +10,9 @@
 [merge]
 	conflictstyle = diff3
 	tool = vimdiff
+[mergetool]
+	prompt = false
+	keepBackup = false
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -23,21 +26,11 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-[alias]
-  st = status
-  co = commit
-  br = branch
-  ch = checkout
-  di = diff
-  lg = log --oneline --graph --decorate
-  ap = add -p
-  syncup = pull upstream master
-  syncor = push origin master
-	mfcommits = "!f() { git log $1 --oneline --not $(git rev-list $2 ^$1 --merges | tail -1)^; }; f"
-[diff]
-	tool = vimdiff
+[color]
+	ui = true
+[push]
+	default = matching
 [rerere]
 	enabled = true
-[mergetool "vimdiff"]
-	trustExitCode = false
-	keepBackup = false
+[rebase]
+	autosquash = true

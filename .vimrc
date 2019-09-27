@@ -50,6 +50,8 @@ let maplocalleader=' '
 " PATHOGEN BEGIN
 execute pathogen#infect()
 
+packadd! matchit
+
 syntax on
 syntax sync fromstart " parse from beginning to get accurate syntax highlighting
 filetype plugin indent on
@@ -59,8 +61,8 @@ filetype plugin indent on
 " colorscheme wombat256mod
 set exrc " Force to source .vimrc if present in cwd
 set secure " Adds security for non-main .vimrc
-set colorcolumn=100 " Highlight 100th column
-set textwidth=100
+set colorcolumn=120 " Highlight 100th column
+set textwidth=120
 set is " yes incremental search
 set nohls " no highlight search matches
 set ignorecase smartcase
@@ -73,16 +75,15 @@ set foldmethod=manual
 set foldlevelstart=4 " start folding at 4 levels
 set backspace=2 " make backspace work like most other apps
 set formatoptions+=r
+set cursorline
 
 set list listchars=space:·,trail:×,tab:→\ " listchars, including for tab
 set showbreak=+++\ " line continuation begins with '+++ '
 
+set diffopt+=algorithm:patience
+set diffopt+=indent-heuristic
+
 set lazyredraw " makes macros so much faster
-
-" colors
-hi ColorColumn               ctermbg=224
-
-hi SpecialKey                ctermfg=252
 
 " Link char to string (o.w. linked to 'constant')
 hi link Character String
@@ -127,11 +128,23 @@ hi MoreMsg                   ctermfg=70
 hi Question                  ctermfg=70
 hi WarningMsg                ctermfg=Black       ctermbg=LightRed
 hi Visual                    ctermbg=255         term=reverse
-hi MatchParen                ctermbg=159         term=reverse
+hi MatchParen                ctermbg=117         term=reverse
 hi DiffText                  ctermbg=189         term=reverse
 hi DiffChange                ctermbg=229         term=reverse
 hi PmenuSel                  ctermbg=219
 hi Folded                    ctermbg=255         ctermfg=246
+
+hi CursorLine                ctermbg=230         cterm=none
+
+hi DiffAdd                   ctermbg=193  term=bold    guibg=LightBlue    cterm=bold
+hi DiffChange                ctermbg=229 term=reverse guibg=LightMagenta
+hi DiffDelete                ctermfg=196 ctermbg=224  guibg=LightCyan    term=bold  guifg=Blue gui=bold
+hi DiffText                  ctermbg=195 guibg=Red    term=reverse       gui=bold
+
+" colors
+hi ColorColumn               ctermbg=224
+
+hi SpecialKey                ctermfg=253
 
 " orgmode
 hi link org_heading1 Title
@@ -174,6 +187,9 @@ map <leader>p :lprev<CR>
 " shortcut for editing vimrc
 map <leader>ev :e ~/.vimrc<CR>
 
+" edit prev buffer & delete current
+map <leader>dc <C-^>:bd #<CR>
+
 " insert date as YYYY-MM-DD
 nnoremap <leader>td "=strftime("%Y-%m-%d")<CR>p
 nnoremap <F4> "=strftime("%Y-%m-%d")<CR>p
@@ -212,6 +228,9 @@ function! s:CLangShortcuts()
   inoremap uns; using namespace std;<CR>
 endfunction
 
+" recognize .config files as xml
+autocmd BufRead,BufNewFile *.config set filetype=xml
+
 " mappings for cpp files
 augroup filetype_cpp
     au!
@@ -231,6 +250,12 @@ augroup filetype_swift
     " TODO: mapping for ./build/debug/x
 augroup END
 
+" mappings for git commit files (turn spellcheck on!)
+augroup filetype_gitcommit
+    au!
+    au FileType gitcommit set spell
+augroup END
+
 " vim-dispatch
 map <F9> :Dispatch<CR>
 
@@ -238,29 +263,46 @@ nmap <F3> @:
 
 " fugitive
 map <leader>gu :!git pull<CR>
-map <leader>gp :Dispatch! git push<CR>
-map <leader>gP :Dispatch! git br \| grep \* \| sed "s/[\* ]*//" \| xargs git push -u origin<CR>
-map <leader>gc :Gcommit -m ""<left>
+map <leader>gp :Dispatch! git push origin<CR>
+" use with care...
+map <leader>gFP :Dispatch! git push origin --force<CR>
+map <leader>gP :Dispatch! git branch \| grep \* \| sed "s/[\* ]*//" \| xargs git push -u origin<CR>
+map <leader>gcc :Gcommit -m ""<left>
+map <leader>gcf :!git commit --fixup<space>
+map <leader>gcs :!git commit --squash<space>
 map <leader>gC :Gcommit -am ""<left>
-map <leader>gc :Gcommit -m ""<left>
+" view staged changes
+map <leader>gd :!git diff --cached<CR>
 " I use it more like "emend"
 map <leader>ge :Gcommit --amend<CR>
 " write first to avoid common mistake
-map <leader>ga :w<CR>:!git ap<CR>
+map <leader>ga :w<CR>:!git add -p<CR>
 map <leader>gA :!git add<space>
-map <leader>gH :!git ch -b<space>
-map <leader>gb :!git br<CR>
-map <leader>gh :!git ch<space>
-map <leader>gM :!git ch master<CR>
-map <leader>gl :!git lg<CR>
-map <leader>gs :Gstatus<CR>
+map <leader>gH :!git checkout -b<space>
+map <leader>gb :!git branch<CR>
+map <leader>gh :!git checkout<space>
+map <leader>gl :!git log --oneline --graph --decorate<CR>
+map <leader>gL :!git log --branches --remotes --tags --oneline --graph --decorate<CR>
+map <leader>gs :!git status -sb<CR>
+map <leader>gS :Gstatus<CR>
 map <leader>gr :!git reset<CR>
 map <leader>gR :!git reset --hard<CR>
 map <leader>gm :!git merge<space>
 map <leader>gt :!git tag -a<space>
+map <leader>gi :!git rebase -i<CR>
+map <leader>gf :!git clang-format -fq<CR><CR>
 
 " ripgrep
 map <leader>rg :!rg ""<left>
+map <leader>rw "tyiw:!rg "<C-R>t"<CR>
+map <leader>rW "tyiW:!rg "<C-R>t"<CR>
+vmap <leader>rv "ty:!rg "<C-R>t"<CR>
+
+" typedef to using
+nmap <leader>t2u :%s/typedef \+\(.\+\) \+\(\w\+\);/using \2 = \1;<CR>
+
+" comment TODO
+nmap <leader>ctd I// <Esc>A TODO<Esc>
 
 " config for vim-airline
 let g:airline_section_x = ''
@@ -271,7 +313,7 @@ let g:airline_skip_empty_sections = 1
 let g:airline_theme='papercolor'
 
 " config for ctrl-p
-let g:ctrlp_max_depth = 6 " to avoid bloating search time when in a non-git directory
+let g:ctrlp_max_depth = 7 " to avoid bloating search time when in a non-git directory
 let g:ctrlp_show_hidden = 1 " show hidden files (dotfiles)
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/](\.git|CMakeFiles)$',
@@ -279,6 +321,7 @@ let g:ctrlp_custom_ignore = {
     \ }
 let g:ctrlp_open_multiple_files = '3vjr' " open at most this many tabs when opening multiple files
 let g:ctrlp_open_single_match = ['buffer tags', 'buffer']
+let g:ctrlp_switch_buffer = ''
 
 " auto-reload vimrc on write
 augroup myvimrchooks
@@ -355,7 +398,22 @@ nnoremap <leader>sf %lv%%F,hdwv%%hp%p
 " (ab, cd)
 " (b, a, c)
 " {c, a, b}
-"
-"
-" TO redo chinese flashcards:
-" %s/\(.*\) \([a-z]*[1-5]\S*\s*\)*\s*\(.*\) \(.*\)/\3   \1 \2   \4
+
+" tags
+nnoremap <leader>mt :Dispatch! ctags -R src<CR>
+nnoremap <leader>[ :tprev<CR>
+nnoremap <leader>] :tnext<CR>
+
+nnoremap <leader>, :cprev<CR>zz
+nnoremap <leader>. :cnext<CR>zz
+
+" get italics
+set t_ZH=[3m
+set t_ZR=[23m
+
+" toggle listchars
+nnoremap <F8> :set list!<CR>
+
+" toggle cpp/h of file
+nnoremap <leader>ec :e %<BS>cpp<CR>
+nnoremap <leader>eh :e %<BS><BS><BS>h<CR>
