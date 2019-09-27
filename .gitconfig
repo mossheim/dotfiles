@@ -1,12 +1,7 @@
 [core]
 	excludesfile = /Users/brianheim/.gitignore_global
 	editor = /usr/bin/vim
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+	commentchar = @
 [user]
 	name = Brian Heim
 	email = brianlheim@gmail.com
@@ -14,6 +9,7 @@
 	template = ~/.stCommitMsg
 [merge]
 	conflictstyle = diff3
+	tool = vimdiff
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -37,3 +33,11 @@
   ap = add -p
   syncup = pull upstream master
   syncor = push origin master
+	mfcommits = "!f() { git log $1 --oneline --not $(git rev-list $2 ^$1 --merges | tail -1)^; }; f"
+[diff]
+	tool = vimdiff
+[rerere]
+	enabled = true
+[mergetool "vimdiff"]
+	trustExitCode = false
+	keepBackup = false

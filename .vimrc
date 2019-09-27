@@ -9,6 +9,10 @@ augroup filetype_sc
     au BufRead,BufNewFile *.sc set softtabstop=4
     au BufRead,BufNewFile *.sc set shiftwidth=4
     au BufRead,BufNewFile *.sc set noexpandtab
+    au BufRead,BufNewFile *.scd set tabstop=4
+    au BufRead,BufNewFile *.scd set softtabstop=4
+    au BufRead,BufNewFile *.scd set shiftwidth=4
+    au BufRead,BufNewFile *.scd set noexpandtab
 augroup END
 
 " automatically reload files that have changed externally
