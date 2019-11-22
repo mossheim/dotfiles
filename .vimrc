@@ -52,7 +52,6 @@ syntax on
 syntax sync fromstart " parse from beginning to get accurate syntax highlighting
 filetype plugin indent on
 
-
 " Basic config settings
 " colorscheme wombat256mod
 set exrc " Force to source .vimrc if present in cwd
@@ -69,6 +68,8 @@ set shiftwidth=4
 set expandtab
 set foldmethod=manual
 set foldlevelstart=4 " start folding at 4 levels
+set foldopen-=search
+set foldopen-=block
 set backspace=2 " make backspace work like most other apps
 set formatoptions+=r
 set cursorline
@@ -409,6 +410,9 @@ set t_ZR=[23m
 
 " toggle listchars
 nnoremap <F8> :set list!<CR>
+
+" fix common mistake
+inoremap :; ::
 
 " helper function -- if buffer exists, switch to it, otherwise edit it
 " Added this because otherwise using :e means we lose previous position in file.
