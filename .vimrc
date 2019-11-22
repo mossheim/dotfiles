@@ -447,7 +447,7 @@ nnoremap <leader>eh q:icall SwitchToOrEdit("<C-r>#<Esc>:s/\.cpp$/.h/e<CR>A")<CR>
 " - will jump to first func with same name in header
 "
 " Possible improvements -- jump to class first in case some other class in the header also has the same function?
-nmap <leader>usih :w<CR>yy ehggpA;<Esc>:s/\(\w\+::\)\+/<CR>f(b"byiwdd/    \w\+ <C-r>b(.*).*;$<CR>pkdwjPkdd:w<CR><C-^>
+nmap <leader>usih :w<CR>yy ehggpA;<Esc>:s/\(\w\+::\)\+/<CR>f(b"byiwdd/    \(\w\\|:\)\+ <C-r>b(.*).*;$<CR>pkdwjPkdd:w<CR><C-^>
 
 " Update Signature In Cpp
 "
@@ -464,4 +464,12 @@ nmap <leader>usih :w<CR>yy ehggpA;<Esc>:s/\(\w\+::\)\+/<CR>f(b"byiwdd/    \w\+ <
 " - clobbers mark z
 " - only updates whatever is on the same line as the function name (i.e. maybe not template params etc.)
 " - will jump to first func with same class::name in cpp file
-nmap <leader>usic mz:w<CR>"byy?^ *class<CR>/class<CR>w"cyiw ecgg"bpf(B"cPa::<Esc>$x0dwf(B"byt("cyydd/<C-r>b<CR>Vp:w<CR><C-^>'z
+nmap <leader>usic mz:w<CR>"byy?^ *class<CR>k/class<CR>w"cyiw ecgg"bpf(B"cPa::<Esc>$x0dwf(B"byt("cyydd/<C-r>b<CR>Vp:w<CR><C-^>'z
+
+" Paste Signature In Header
+"
+" If you have just yanked a function signature, pastes and formats it for the header.
+"
+" Assumes:
+" - function signature is single line
+nnoremap <leader>psih p==A;<Esc>0f(F:dBx:w<CR>
