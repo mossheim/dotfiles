@@ -52,13 +52,31 @@ alias gR='git reset --hard'
 alias gl='git log --oneline --graph --decorate'
 alias gL='git log --branches --remotes --tags --oneline --graph --decorate'
 alias gi='git rebase -i'
+alias grc='git rebase --continue'
+alias gra='git rebase --abort'
 
 alias gcf='git commit --fixup'
 alias gcs='git commit --squash'
 
+# "force pull"
+gU() {
+    git fetch origin $(git rev-parse --abbrev-ref HEAD)
+    git reset --hard FETCH_HEAD
+}
+
 # put the last commit on a new branch
 gUH() {
     git checkout -b $1 -q && git checkout - -q && git reset --hard HEAD^ -q && git checkout $1 -q
+}
+
+# git branch, current
+gcb() {
+    git branch | grep '^\*' | cut -d' ' -f2
+}
+
+# git force-push current branch only
+gfpc() {
+    git push origin -f $(gcb)
 }
 
 # clone from GitHub
