@@ -153,6 +153,12 @@ hi link org_heading6 Identifier
 hi link org_heading7 Special
 hi org_todo_keyword_DONE ctermfg=64 ctermbg=194
 
+if $SOLARIZED == 'DARK'
+    hi ColorColumn               ctermbg=59
+    hi CursorLine                ctermbg=53         cterm=none
+    hi SpecialKey                ctermfg=238
+endif
+
 " ---- Splits ----
 " resize splits when windows are resized
 autocmd VimResized * wincmd =
