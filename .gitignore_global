@@ -28,3 +28,6 @@ cmake-build-debug
 
 # ctags
 tags
+
+# clang format
+.clang-format
