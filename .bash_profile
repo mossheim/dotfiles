@@ -131,7 +131,7 @@ then
 fi
 
 set -o vi
-if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
+if which swiftenv &>/dev/null; then eval "$(swiftenv init -)"; fi
 
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
