@@ -31,3 +31,6 @@ tags
 
 # clang format
 .clang-format
+
+# pycache
+__pycache__
