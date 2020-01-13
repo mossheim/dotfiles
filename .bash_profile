@@ -102,11 +102,6 @@ export PATH="/usr/local/opt/bison/bin:$PATH"
 set -o vi
 # .bash_profile
 
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-        . ~/.bashrc
-fi
-
 # Untracked
 if [ -f ~/.bash_profile_extra ]; then
     . ~/.bash_profile_extra
