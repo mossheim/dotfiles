@@ -58,6 +58,8 @@ alias gra='git rebase --abort'
 alias gcf='git commit --fixup'
 alias gcs='git commit --squash'
 
+alias gF='git clang-format'
+
 # "force pull"
 gU() {
     git fetch origin $(git rev-parse --abbrev-ref HEAD)
