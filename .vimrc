@@ -42,9 +42,30 @@ let g:pymode_rope_completion = 0      " turn off pymode rope already!
 
 let maplocalleader=' '
 
-""""""""""""""""""""
-" PATHOGEN BEGIN
-execute pathogen#infect()
+set nocompatible
+filetype off " we turn it on later
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'supercollider/scvim'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'python-mode/python-mode'
+Plugin 'tpope/vim-surround'
+Plugin 'brianlheim/schwifty-vim'
+Plugin 'vim-scripts/utl.vim'
+Plugin 'vim-scripts/repeat.vim'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'jez/vim-better-sml'
+Plugin 'pboettch/vim-cmake-syntax'
+Plugin 'tpope/vim-dispatch'
+Plugin 'majutsushi/tagbar'
+
+call vundle#end()
 
 packadd! matchit
 
