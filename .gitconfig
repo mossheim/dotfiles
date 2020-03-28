@@ -9,7 +9,7 @@
 	keepBackup = false
 [user]
 	name = Brian Heim
-	email = bheim@drwholdings.com
+	email = brianlheim@gmail.com
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -31,3 +31,5 @@
 	enabled = true
 [rebase]
 	autosquash = true
+[credential]
+	helper = store
