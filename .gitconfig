@@ -8,8 +8,8 @@
 	prompt = false
 	keepBackup = false
 [user]
-	name = Brian Heim
-	email = brianlheim@gmail.com
+	name = brianlheim
+	email = self@brianlheim.com
 [color "branch"]
 	current = yellow reverse
 	local = yellow
