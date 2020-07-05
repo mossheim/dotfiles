@@ -95,7 +95,7 @@ set formatoptions+=r
 set cursorline
 
 set list listchars=space:·,trail:×,tab:→\ " listchars, including for tab
-set showbreak=+++\ " line continuation begins with '+++ '
+set showbreak="" " +++\ " line continuation begins with '+++ '
 
 set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
