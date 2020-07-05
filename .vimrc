@@ -104,80 +104,80 @@ set lazyredraw " makes macros so much faster
 
 " Link char to string (o.w. linked to 'constant')
 hi link Character String
-
-" light style
-hi Boolean                   ctermfg=11          cterm=NONE
+"
+"" light style
+"hi Boolean                   ctermfg=11          cterm=NONE
 hi Comment                   ctermfg=Grey        cterm=italic
-hi Constant                  ctermfg=11          cterm=NONE
-hi Define                    ctermfg=Blue        cterm=bold
-hi Delimiter                 ctermfg=Black
-hi Error                     ctermfg=Black       ctermbg=218
-hi Function                  ctermfg=15          cterm=none
-hi Identifier                ctermfg=Cyan        cterm=none
-hi Include                   ctermfg=DarkMagenta
-hi Number                    ctermfg=Blue
-hi PreCondit                 ctermfg=DarkMagenta
-hi PreProc                   ctermfg=White
-hi SpecialComment            ctermfg=108         cterm=italic
-hi Statement                 ctermfg=11          cterm=NONE
-hi String                    ctermfg=Red
-hi Title                     ctermfg=DarkBlue    cterm=bold
-hi Todo                      ctermfg=DarkGrey    ctermbg=185
-hi Type                      ctermfg=Blue        cterm=NONE
+"hi Constant                  ctermfg=11          cterm=NONE
+"hi Define                    ctermfg=Blue        cterm=bold
+"hi Delimiter                 ctermfg=Black
+hi Error                     ctermfg=red       ctermbg=black cterm=reverse
+"hi Function                  ctermfg=15          cterm=none
+"hi Identifier                ctermfg=Cyan        cterm=none
+"hi Include                   ctermfg=DarkMagenta
+"hi Number                    ctermfg=Blue
+"hi PreCondit                 ctermfg=DarkMagenta
+"hi PreProc                   ctermfg=White
+"hi SpecialComment            ctermfg=108         cterm=italic
+"hi Statement                 ctermfg=11          cterm=NONE
+"hi String                    ctermfg=Red
+"hi Title                     ctermfg=DarkBlue    cterm=bold
+"hi Todo                      ctermfg=DarkGrey    ctermbg=185
+"hi Type                      ctermfg=Blue        cterm=NONE
 
 " swift
-hi swiftTypeDefinition       ctermfg=1           cterm=bold
-
-" markdown
-hi markdownCode              ctermfg=Cyan
-
-" doxygen
-hi doxygenSpecialOneLineDesc ctermfg=109         cterm=none
-hi doxygenKeyword            ctermfg=109         cterm=bold
-hi doxygenBrief              ctermfg=109         cterm=bold
-hi doxygenBody               ctermfg=109         cterm=bold
-hi doxygenSpecial            ctermfg=109         cterm=bold
-
-" vim-specific
-hi Directory                 ctermfg=57
-hi ErrorMsg                  ctermfg=Black       ctermbg=218
-hi MoreMsg                   ctermfg=70
-hi Question                  ctermfg=70
-hi WarningMsg                ctermfg=Black       ctermbg=LightRed
-hi Visual                    ctermbg=255         term=reverse
-hi MatchParen                ctermbg=117         term=reverse
-hi DiffText                  ctermbg=189         term=reverse
-hi DiffChange                ctermbg=229         term=reverse
-hi PmenuSel                  ctermbg=219
+"hi swiftTypeDefinition       ctermfg=1           cterm=bold
+"
+"" markdown
+"hi markdownCode              ctermfg=Cyan
+"
+"" doxygen
+"hi doxygenSpecialOneLineDesc ctermfg=109         cterm=none
+"hi doxygenKeyword            ctermfg=109         cterm=bold
+"hi doxygenBrief              ctermfg=109         cterm=bold
+"hi doxygenBody               ctermfg=109         cterm=bold
+"hi doxygenSpecial            ctermfg=109         cterm=bold
+"
+"" vim-specific
+"hi Directory                 ctermfg=57
+"hi ErrorMsg                  ctermfg=Black       ctermbg=218
+"hi MoreMsg                   ctermfg=70
+"hi Question                  ctermfg=70
+"hi WarningMsg                ctermfg=Black       ctermbg=LightRed
+"hi Visual                    ctermbg=255         term=reverse
+"hi MatchParen                ctermbg=117         term=reverse
+"hi DiffText                  ctermbg=189         term=reverse
+"hi DiffChange                ctermbg=229         term=reverse
+"hi PmenuSel                  ctermbg=219
 hi Folded                    ctermbg=255         ctermfg=246
-
-hi CursorLine                ctermbg=230         cterm=none
-
-hi DiffAdd                   ctermbg=193  term=bold    guibg=LightBlue    cterm=bold
-hi DiffChange                ctermbg=229 term=reverse guibg=LightMagenta
-hi DiffDelete                ctermfg=196 ctermbg=224  guibg=LightCyan    term=bold  guifg=Blue gui=bold
-hi DiffText                  ctermbg=195 guibg=Red    term=reverse       gui=bold
-
-" colors
+"
+hi CursorLine                ctermbg=230         term=reverse cterm=none
+"
+"hi DiffAdd                   ctermbg=193  term=bold    guibg=LightBlue    cterm=bold
+"hi DiffChange                ctermbg=229 term=reverse guibg=LightMagenta
+"hi DiffDelete                ctermfg=196 ctermbg=224  guibg=LightCyan    term=bold  guifg=Blue gui=bold
+"hi DiffText                  ctermbg=195 guibg=Red    term=reverse       gui=bold
+"
+"" colors
 hi ColorColumn               ctermbg=224
-
+"
 hi SpecialKey                ctermfg=253
+"
+"" orgmode
+"hi link org_heading1 Title
+"hi link org_heading2 Constant
+"hi link org_heading3 Type
+"hi link org_heading4 String
+"hi link org_heading5 PreProc
+"hi link org_heading6 Identifier
+"hi link org_heading7 Special
+"hi org_todo_keyword_DONE ctermfg=64 ctermbg=194
 
-" orgmode
-hi link org_heading1 Title
-hi link org_heading2 Constant
-hi link org_heading3 Type
-hi link org_heading4 String
-hi link org_heading5 PreProc
-hi link org_heading6 Identifier
-hi link org_heading7 Special
-hi org_todo_keyword_DONE ctermfg=64 ctermbg=194
-
-if $SOLARIZED == 'DARK'
-    hi ColorColumn               ctermbg=59
-    hi CursorLine                ctermbg=53         cterm=none
-    hi SpecialKey                ctermfg=238
-endif
+"if $SOLARIZED == 'DARK'
+    "hi ColorColumn               ctermbg=59
+    "hi CursorLine                ctermbg=53         cterm=none
+    "hi SpecialKey                ctermfg=238
+"endif
 
 " ---- Splits ----
 " resize splits when windows are resized
