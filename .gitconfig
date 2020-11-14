@@ -10,6 +10,7 @@
 [user]
 	name = brianlheim
 	email = self@brianlheim.com
+	signingkey = 0796CC538BEFF177
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -33,3 +34,5 @@
 	autosquash = true
 [credential]
 	helper = store
+[pull]
+	ff = only

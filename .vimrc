@@ -124,7 +124,7 @@ hi Error                     ctermfg=red       ctermbg=black cterm=reverse
 "hi Statement                 ctermfg=11          cterm=NONE
 "hi String                    ctermfg=Red
 "hi Title                     ctermfg=DarkBlue    cterm=bold
-"hi Todo                      ctermfg=DarkGrey    ctermbg=185
+hi Todo                      ctermfg=DarkGrey    ctermbg=185
 "hi Type                      ctermfg=Blue        cterm=NONE
 
 " swift
