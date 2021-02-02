@@ -116,5 +116,5 @@ export LS_COLORS
 export GPG_TTY=$(tty)
 
 if ! ssh-add -T ~/.ssh/id_rsa 2>/dev/null; then
-    ssh-add
+    ssh-add 2>/dev/null
 fi
