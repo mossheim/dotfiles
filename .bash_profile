@@ -10,7 +10,7 @@ vimpatch() {
 }
 
 # ls options
-alias ls='ls -lh --color'
+alias ls='ls -lh'
 alias l=ls
 export CLICOLOR=
 
@@ -93,13 +93,46 @@ scoh() {
     find ~/git/supercollider/HelpSource -name "$1" -exec open {} \;
 }
 
+# mimic rg if not on platform
+if ! which rg 2>/dev/null >/dev/null
+then
+    function rg() {
+        grep -rI $1 .
+    }
+fi
+
 # rg for matches and open in vim
 vimrg() {
     vim $(rg -l "$@" | xargs)
 }
 
-# display config
-PS1='[\[\e[0;32m\]\u\[\e[0m\]@\h \[\e[0;36m\]\W\[\e[0m\]]$ '
+export SC_REPO='/Users/brianheim/git/supercollider'
+sctest() {
+    cd "$SC_REPO/build"
+    # if building fails, reconfigure and build from scratch
+    if git fetch $1 && git checkout $2
+    then
+        if scmake
+        then
+            exit 0
+        else
+            scconf && scmake
+        fi
+    fi
+}
+
+ # display config
+PS1='[\u@\h \W]$ '
+
+# history
+export HISTSIZE=10000
+
+# PATHs
+export PATH=$PATH:$HOME/bin:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:$HOME/Library/Haskell/bin
+export PATH=$PATH:$HOME/git/supercollider/build/Install/SuperCollider/SuperCollider.app/Contents/MacOS
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH="/usr/local/opt/bison/bin:$PATH"

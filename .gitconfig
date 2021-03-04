@@ -1,10 +1,11 @@
 [core]
-	excludesfile = /home/bheim/.gitignore_global
-	editor = /usr/bin/vim
+	excludesfile = /Users/brianheim/.gitignore_global
+	editor = /usr/local/bin/vim
 	commentchar = @
 [user]
 	name = Brian Heim
-	email = brianlheim@gmail.com
+	email = self@brianlheim.com
+	signingkey = 0796CC538BEFF177
 [commit]
 	template = ~/.stCommitMsg
 [merge]
@@ -34,3 +35,7 @@
 	enabled = true
 [rebase]
 	autosquash = true
+[pull]
+	ff = only
+[gpg]
+	program = gpg

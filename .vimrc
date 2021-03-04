@@ -80,8 +80,10 @@ set cursorline
 set list listchars=space:·,trail:×,tab:→\ " listchars, including for tab
 set showbreak=+++\ " line continuation begins with '+++ '
 
-set diffopt+=algorithm:patience
-set diffopt+=indent-heuristic
+if v:version >= 801
+    set diffopt+=algorithm:patience
+    set diffopt+=indent-heuristic
+endif
 
 set lazyredraw " makes macros so much faster
 
@@ -417,3 +419,6 @@ nnoremap <F8> :set list!<CR>
 " toggle cpp/h of file
 nnoremap <leader>ec :e %<BS>cpp<CR>
 nnoremap <leader>eh :e %<BS><BS><BS>h<CR>
+
+nnoremap <leader>eC :e %<BS><BS><BS>cpp<CR>
+nnoremap <leader>eH :e %<BS><BS><BS>hpp<CR>
