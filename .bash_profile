@@ -122,3 +122,7 @@ export GPG_TTY=$(tty)
 if ! ssh-add -T ~/.ssh/id_rsa 2>/dev/null; then
     ssh-add 2>/dev/null
 fi
+
+if [[ -d ~/.local/share/gem/ruby/2.7.0/bin ]]; then
+    export PATH=~/.local/share/gem/ruby/2.7.0/bin:$PATH
+fi
