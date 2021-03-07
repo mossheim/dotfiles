@@ -1,3 +1,7 @@
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+      exec startx
+fi
+
 alias p3='python3'
 alias p2='python2.7'
 alias v=vim
