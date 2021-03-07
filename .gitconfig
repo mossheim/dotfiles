@@ -27,7 +27,7 @@
 [color]
 	ui = true
 [push]
-	default = matching
+	default = current
 [rerere]
 	enabled = true
 [rebase]
