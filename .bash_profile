@@ -1,5 +1,11 @@
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-      exec startx
+if [ -z "${DISPLAY}" ] && [ "$(tty)" == "/dev/tty1" ]; then
+    echo "if this were a reall attack, you would be dead"
+    echo "enter Y to go into sway"
+    read maybe_y
+    echo $maybe_y
+    if [ "$maybe_y" == "Y" ]; then
+        exec sway --my-next-gpu-wont-be-nvidia
+    fi
 fi
 
 alias p3='python3'
