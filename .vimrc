@@ -2,15 +2,6 @@
 " Brian Heim, Author
 " 2017
 
-" Use (real) tabs of 4 on SuperCollider files
-augroup filetype_sc
-    au!
-    au BufRead,BufNewFile *.sc set tabstop=4
-    au BufRead,BufNewFile *.sc set softtabstop=4
-    au BufRead,BufNewFile *.sc set shiftwidth=4
-    au BufRead,BufNewFile *.sc set noexpandtab
-augroup END
-
 " automatically reload files that have changed externally
 set autoread
 
@@ -49,7 +40,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'supercollider/scvim'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
