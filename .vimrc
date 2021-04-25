@@ -53,7 +53,7 @@ Plugin 'jez/vim-better-sml'
 Plugin 'pboettch/vim-cmake-syntax'
 Plugin 'tpope/vim-dispatch'
 Plugin 'majutsushi/tagbar'
-Plugin 'puremourning/vimspector'
+" Plugin 'puremourning/vimspector'
 Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
