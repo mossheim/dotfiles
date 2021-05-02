@@ -1,0 +1,4 @@
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+safeeyes &
+/usr/bin/jackd -dalsa -dhw:0 -r48000 -p1024 -n3 &
+exec sway --my-next-gpu-wont-be-nvidia

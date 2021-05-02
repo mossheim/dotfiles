@@ -1,0 +1,41 @@
+#!/bin/env bash
+
+color_up_down() {
+    read x y
+    case $y in
+        on)
+            echo $x \#AA000000 \#AAFFFFFF \#AAFFFFFF
+            ;;
+        off)
+            echo $x \#AA000000 \#AAFF3333 \#AAFF3333
+            ;;
+    esac
+}
+
+filter_brightness() {
+    read x
+    echo $x | cut -d, -f 4 | sed 's/%//'
+}
+
+case $1 in
+    up)
+        amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*\[(off|on)\].*/\1 \2/p' | head -1 | color_up_down
+        ;;
+    down)
+        amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*\[(off|on)\].*/\1 \2/p' | head -1 | color_up_down
+        ;;
+    toggle)
+        amixer sset Master toggle | sed -En 's/.*\[([0-9]+)%\].*\[(off|on)\].*/\1 \2/p' | head -1 | color_up_down
+        ;;
+    capture-toggle)
+        amixer sset Capture toggle | sed -En 's/.*\[([0-9]+)%\].*\[(off|on)\].*/\1 \2/p' | head -1 | color_up_down
+        ;;
+    brighter)
+        brightnessctl -m set +5% | head -1 | filter_brightness
+        ;;
+    darker)
+        brightnessctl -m set 5%- | head -1 | filter_brightness
+        ;;
+esac
+
+killall -SIGUSR1 i3status
