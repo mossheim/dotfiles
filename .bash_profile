@@ -4,7 +4,7 @@ if [ -z "${DISPLAY}" ] && [ "$(tty)" == "/dev/tty1" ]; then
     read maybe_y
     echo $maybe_y
     if [ "$maybe_y" == "Y" ]; then
-        exec sway --my-next-gpu-wont-be-nvidia
+        exec ~/bin/startsway
     fi
 fi
 
