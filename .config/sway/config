@@ -184,6 +184,12 @@ exec tail -f $SWAYSOCK.wob | wob
 # clipman
 exec wl-paste -t text --watch clipman store
 
+# safeeyes
+exec safeeyes
+
+# jack
+exec /usr/bin/jackd -dalsa -dhw:0 -r48000 -p1024 -n3
+
 bindsym --locked XF86AudioRaiseVolume exec ~/bin/change_audio_or_brightness up >$SWAYSOCK.wob
 bindsym --locked XF86AudioLowerVolume exec ~/bin/change_audio_or_brightness down >$SWAYSOCK.wob
 bindsym --locked XF86AudioMute exec ~/bin/change_audio_or_brightness toggle >$SWAYSOCK.wob
