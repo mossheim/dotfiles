@@ -54,7 +54,7 @@ set lazyredraw " makes macros so much faster
 
 " set for coc.nvim
 set hidden
-set cmdheight=2
+set cmdheight=1
 set updatetime=300
 set shortmess+=c
 
