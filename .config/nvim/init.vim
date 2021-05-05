@@ -1,72 +1,30 @@
-" main .vimrc
-" Brian Heim, Author
-" 2017
+call plug#begin()
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'kien/ctrlp.vim'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/utl.vim'
+Plug 'vim-scripts/repeat.vim'
+Plug 'vim-scripts/taglist.vim'
+Plug 'pboettch/vim-cmake-syntax'
+Plug 'tpope/vim-dispatch'
+Plug 'majutsushi/tagbar'
+Plug 'altercation/vim-colors-solarized'
+call plug#end()
 
-" automatically reload files that have changed externally
-set autoread
 
 " C++ indentation rules
 set cino+=L0:0g0N-st0(1s
-let g:brian_cpp_flags = '-Wall -Wpedantic -std=c++1z'
-
-" C++ compiler warnings
-let g:C_CFlags = g:brian_cpp_flags
-
-" Doxygen highlighting
-let g:load_doxygen_syntax=1
-
-" utl.vim settings
-let g:utl_cfg_hdl_scm_http_system = "silent !open -a Firefox '%u'"
-let g:utl_cfg_hdl_scm_http=g:utl_cfg_hdl_scm_http_system
-
-" vim-orgmode settings
-let g:org_agenda_files=['~/org/*.org']
-
-"""""""""""""""""""
-" PYTHON CONFIG
-"
-let g:pymode_python = 'python3'       " syntax checking for python3
-let g:pymode_options = 0              " turn off intrusive option changes introduced by pymode. typical...
-let g:pymode_rope = 0                 " turn off rope script
-let g:pymode_rope_complete_on_dot = 0 " turn off pymode rope
-let g:pymode_rope_completion = 0      " turn off pymode rope already!
 
 let maplocalleader=' '
 
-set nocompatible
-filetype off " we turn it on later
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-surround'
-Plugin 'brianlheim/schwifty-vim'
-Plugin 'vim-scripts/utl.vim'
-Plugin 'vim-scripts/repeat.vim'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'jez/vim-better-sml'
-Plugin 'pboettch/vim-cmake-syntax'
-Plugin 'tpope/vim-dispatch'
-Plugin 'majutsushi/tagbar'
-" Plugin 'puremourning/vimspector'
-Plugin 'altercation/vim-colors-solarized'
-
-call vundle#end()
-
-packadd! matchit
-
 syntax on
-syntax sync fromstart " parse from beginning to get accurate syntax highlighting
 filetype plugin indent on
 
 " Basic config settings
-" colorscheme wombat256mod
-set exrc " Force to source .vimrc if present in cwd
+set autoread " automatically reload files that have changed externally
 set secure " Adds security for non-main .vimrc
 set colorcolumn=120 " Highlight 100th column
 set textwidth=120
@@ -87,12 +45,18 @@ set formatoptions+=r
 set cursorline
 
 set list listchars=space:·,trail:×,tab:→\ " listchars, including for tab
-set showbreak="" " +++\ " line continuation begins with '+++ '
+let &showbreak = '+++ '
 
 set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
 
 set lazyredraw " makes macros so much faster
+
+" set for coc.nvim
+set hidden
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
 
 " Link char to string (o.w. linked to 'constant')
 hi link Character String
@@ -114,7 +78,7 @@ hi Error                     ctermfg=red       ctermbg=black cterm=reverse
 "hi Statement                 ctermfg=11          cterm=NONE
 "hi String                    ctermfg=Red
 "hi Title                     ctermfg=DarkBlue    cterm=bold
-hi Todo                      ctermfg=DarkGrey    ctermbg=185
+hi vimTodo                      ctermfg=DarkGrey    ctermbg=185
 "hi Type                      ctermfg=Blue        cterm=NONE
 
 " swift
@@ -153,23 +117,8 @@ hi CursorLine                ctermbg=230         term=reverse cterm=none
 "" colors
 hi ColorColumn               ctermbg=224
 "
-hi SpecialKey                ctermfg=253
+hi Whitespace                ctermfg=253
 "
-"" orgmode
-"hi link org_heading1 Title
-"hi link org_heading2 Constant
-"hi link org_heading3 Type
-"hi link org_heading4 String
-"hi link org_heading5 PreProc
-"hi link org_heading6 Identifier
-"hi link org_heading7 Special
-"hi org_todo_keyword_DONE ctermfg=64 ctermbg=194
-
-"if $SOLARIZED == 'DARK'
-    "hi ColorColumn               ctermbg=59
-    "hi CursorLine                ctermbg=53         cterm=none
-    "hi SpecialKey                ctermfg=238
-"endif
 
 " ---- Splits ----
 " resize splits when windows are resized
@@ -200,7 +149,7 @@ map <leader>n :lnext<CR>
 map <leader>p :lprev<CR>
 
 " shortcut for editing vimrc
-map <leader>ev :e ~/.vimrc<CR>
+map <leader>ev :e ~/.config/nvim/init.vim<CR>
 
 " edit prev buffer & delete current
 map <leader>dc <C-^>:bd #<CR>
@@ -210,7 +159,6 @@ nnoremap <leader>td "=strftime("%Y-%m-%d")<CR>p
 nnoremap <F4> "=strftime("%Y-%m-%d")<CR>p
 vnoremap <F4> "=strftime("%Y-%m-%d")<CR>p
 inoremap <F4> <C-R>=strftime("%Y-%m-%d")<CR>
-inoremap <F5> Brian Heim <C-R>=strftime("%Y-%m-%d")<CR>
 
 " insert date as YYYY-MM-DD HH:MM:SS zone-offset
 nnoremap <leader>tld "=strftime('%Y-%m-%d %H:%M:%S %z')<CR>p
@@ -341,7 +289,7 @@ let g:ctrlp_switch_buffer = ''
 " auto-reload vimrc on write
 augroup myvimrchooks
     au!
-    autocmd bufwritepost .vimrc source ~/.vimrc | AirlineRefresh
+    autocmd bufwritepost .config/nvim/init.vim source ~/.config/nvim/init.vim | AirlineRefresh
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""
