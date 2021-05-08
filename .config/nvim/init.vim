@@ -2,6 +2,7 @@ call plug#begin()
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kien/ctrlp.vim'
 Plug 'godlygeek/tabular'
+Plug 'tidalcycles/vim-tidal'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
