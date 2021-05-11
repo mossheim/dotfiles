@@ -15,9 +15,10 @@ Plug 'majutsushi/tagbar'
 Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
-
 " C++ indentation rules
 set cino+=L0:0g0N-st0(1s
+
+let g:tidal_no_mappings = 1
 
 let maplocalleader=' '
 
@@ -177,6 +178,22 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+augroup filetype_tidal
+    au!
+    au FileType tidal let maplocalleader=','
+    au FileType tidal nmap <buffer> <localleader>c <Plug>TidalConfig
+    au FileType tidal nmap <buffer> <localleader>s <Plug>TidalLineSend
+    au FileType tidal nmap <buffer> <localleader>p <Plug>TidalParagraphSend
+    au FileType tidal xmap <buffer> <localleader>s <Plug>TidalRegionSend
+    au FileType tidal nmap <buffer> <localleader>h :TidalHush<cr>
+    let i=1
+    while i<=9
+        execute 'au FileType tidal nnoremap <buffer> <localleader>'.i.'  :TidalSilence '.i.'<cr>'
+        execute 'au FileType tidal nnoremap <buffer> <localleader>s'.i.' :TidalPlay '.i.'<cr>'
+        let i+=1
+    endwhile
+augroup END
+
 " taken from Saleem Abdulrasool (compnerd)
 function! s:CLangShortcuts()
   inoremap #in #include<space>
@@ -264,9 +281,6 @@ vmap <leader>rv "ty:!rg "<C-R>t"<CR>
 
 " typedef to using
 nmap <leader>t2u :%s/typedef \+\(.\+\) \+\(\w\+\);/using \2 = \1;<CR>
-
-" comment TODO
-nmap <leader>ctd I// <Esc>A TODO<Esc>
 
 " config for vim-airline
 let g:airline_section_x = ''
