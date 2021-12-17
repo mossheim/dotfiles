@@ -3,8 +3,8 @@
 	editor = /usr/local/bin/vim
 	commentchar = @
 [user]
-	name = Brian Heim
-	email = self@brianlheim.com
+	name = Moss Heim
+	email = self@mossheim.net
 	signingkey = 0796CC538BEFF177
 [commit]
 	template = ~/.stCommitMsg
